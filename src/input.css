@@ -2,51 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tryb ciemny (spójny z bazą wiedzy aghdrone.pages.dev) */
+/* ==========================================================================
+   Tryb ciemny w stylu Antigravity:
+   - głębokie odcienie grafitu i czerni (#0d0e11, #15171c, #1c1f26)
+   - czyste białe nagłówki i ikony (#f3f4f6) oraz stonowany szary tekst (#9ca3af)
+   - dyskretne, nienarzucające się akcenty w barwach AGH (#1f8a58 / #a71930)
+   ========================================================================== */
 html.dark body {
-  background-color: #0f172a;
-  color: #e2e8f0;
+  background-color: #0d0e11;
+  color: #d1d5db;
 }
 html.dark header {
-  background-color: rgba(15, 23, 42, 0.94);
-  border-color: #334155;
+  background-color: rgba(13, 14, 17, 0.92);
+  border-color: #22252d;
 }
 html.dark #mobile-menu {
-  background-color: #0f172a;
-  border-color: #334155;
+  background-color: #0d0e11;
+  border-color: #22252d;
+}
+html.dark footer {
+  background-color: #0d0e11;
+  border-color: #22252d;
 }
 html.dark .bg-white {
-  background-color: #0f172a;
+  background-color: #0d0e11;
 }
 html.dark article.bg-white,
 html.dark a.bg-white,
 html.dark div.bg-white.rounded-2xl {
-  background-color: #1e293b;
+  background-color: #15171c;
 }
 html.dark .bg-slate-50 {
-  background-color: #1e293b;
+  background-color: #13151a;
 }
 html.dark .bg-slate-100 {
-  background-color: #334155;
+  background-color: #1e2028;
 }
 html.dark .border-slate-200,
 html.dark .border-slate-300 {
-  border-color: #334155;
+  border-color: #252830;
 }
 html.dark .text-slate-900,
 html.dark .text-slate-800 {
-  color: #f8fafc;
+  color: #f4f5f7;
 }
 html.dark .text-slate-700,
 html.dark .text-slate-600 {
-  color: #cbd5e1;
+  color: #9ca3af;
 }
 html.dark .text-slate-500 {
-  color: #94a3b8;
+  color: #6b7280;
 }
+
+/* Białe / jasne ikony w kartach w trybie ciemnym z subtelnym tłem grafitowym */
+html.dark #sectors .rounded-xl {
+  background-color: #1e2028;
+  color: #f4f5f7;
+  border: 1px solid #2b2f3a;
+}
+
+/* Subtelne, nienarzucające się akcenty AGH w trybie ciemnym */
 html.dark .text-agh-green {
-  color: #34d399;
+  color: #e5e7eb;
+}
+html.dark h1 .text-agh-green,
+html.dark h2 .text-agh-green,
+html.dark header .text-agh-green {
+  color: #259661;
+}
+html.dark .text-agh-red {
+  color: #c93b52;
 }
 html.dark .border-agh-green {
-  border-color: #10b981;
+  border-color: #259661;
+}
+html.dark .bg-agh-green\/5,
+html.dark .bg-agh-green\/10 {
+  background-color: rgba(0, 105, 60, 0.14);
+}
+html.dark .border-agh-green\/20 {
+  border-color: rgba(37, 150, 97, 0.3);
+}
+html.dark article:hover,
+html.dark #sectors .group:hover,
+html.dark a.group:hover {
+  border-color: #383d4a;
 }

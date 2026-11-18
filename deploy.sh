@@ -19,6 +19,7 @@ put i18n.js public_html/new-website-production/i18n.js
 put mobile.js public_html/new-website-production/mobile.js
 put aghde.vcf public_html/new-website-production/aghde.vcf
 put images/logo.png public_html/new-website-production/images/logo.png
+put images/logo-dark.png public_html/new-website-production/images/logo-dark.png
 put images/team.jpg public_html/new-website-production/images/team.jpg
 put images/favicons/favicon.png public_html/new-website-production/images/favicons/favicon.png
 put images/projects/*.jpg public_html/new-website-production/images/projects/
