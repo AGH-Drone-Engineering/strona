@@ -54,10 +54,10 @@ const translations = {
       "AGH Drone Engineering to studenckie koło naukowe zrzeszające osoby z pasją do bezzałogowych statków powietrznych, robotyki mobilnej, sztucznej inteligencji i elektroniki.",
     "about.p2":
       "Budujemy autorskie platformy latające – od lekkich rojów dronów 5-calowych, przez ciężkie oktokoptery koaksjalne X8, aż po samoloty kompozytowe i napęd odrzutowy.",
-    "about.board.heading": "Zarząd i Opiekun Koła",
+    "about.board.heading": "Zarząd Koła",
     "about.board.supervisor": "Opiekun Naukowy",
     "about.board.chairman": "Przewodniczący",
-    "about.board.member": "Zarząd Koła",
+    "about.board.member": "Członek zarządu",
 
     // Language toggle
     "lang.toggle": "EN",
@@ -118,7 +118,7 @@ const translations = {
       "AGH Drone Engineering is a student scientific club bringing together enthusiasts of unmanned aerial vehicles, mobile robotics, artificial intelligence, and electronics.",
     "about.p2":
       "We build custom aerial platforms – from 5-inch autonomous drone swarms and heavy X8 coaxial octocopters to composite fixed-wing aircraft and micro-jet propulsion systems.",
-    "about.board.heading": "Club Board & Advisor",
+    "about.board.heading": "Club Board",
     "about.board.supervisor": "Faculty Advisor",
     "about.board.chairman": "Chairman",
     "about.board.member": "Board Member",
