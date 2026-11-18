@@ -58,6 +58,11 @@
             ><span data-i18n="nav.home">Strona główna</span></a
           >
           <a
+            href="projects.html"
+            class="font-medium text-slate-600 transition duration-200 hover:text-agh-green"
+            ><span data-i18n="nav.projects">Projekty</span></a
+          >
+          <a
             href="about.html"
             class="font-medium text-slate-600 transition duration-200 hover:text-agh-green"
             ><span data-i18n="nav.about">O nas</span></a
@@ -102,6 +107,11 @@
             href="index.html"
             class="mobile-link text-lg font-semibold text-agh-green"
             ><span data-i18n="nav.home">Strona główna</span></a
+          >
+          <a
+            href="projects.html"
+            class="mobile-link text-lg font-medium text-slate-700 hover:text-agh-green"
+            ><span data-i18n="nav.projects">Projekty</span></a
           >
           <a
             href="about.html"
@@ -154,10 +164,10 @@
 
         <div class="flex flex-col gap-4 sm:flex-row">
           <a
-            href="mailto:drone@agh.edu.pl"
+            href="projects.html"
             class="rounded-lg bg-agh-green px-8 py-3.5 font-semibold text-white transition duration-200 hover:bg-agh-greenHover"
           >
-            <span data-i18n="hero.cta">Napisz do nas</span>
+            <span data-i18n="hero.cta">Nasze projekty</span>
           </a>
           <a
             href="aghde.vcf"
@@ -332,8 +342,9 @@
               </h3>
               <p class="text-slate-600">
                 <span data-i18n="sectors.hardware.desc"
-                  >Projektowanie i budowa wielowirnikowców, dedykowanych płytek
-                  PCB oraz systemów embedded.</span
+                  >Projektowanie i budowa wielowirnikowców, hybryd
+                  lądowo-powietrznych, dedykowanych płytek PCB oraz systemów
+                  embedded.</span
                 >
               </p>
             </div>
@@ -368,10 +379,135 @@
               <p class="text-slate-600">
                 <span data-i18n="sectors.contests.desc"
                   >Reprezentujemy AGH na zawodach w Polsce i na świecie – m.in.
-                  Droniada, IMAV oraz IARC w USA.</span
+                  Droniada GZM, IMAV (Strasburg), IARC (USA), Dual-Tech AGH i
+                  Robocomp.</span
                 >
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Preview -->
+      <section class="border-t border-slate-200 bg-white py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-8">
+          <div class="mb-12 text-center">
+            <h2 class="mb-3 text-3xl font-bold text-slate-900">
+              <span data-i18n="home.projects.heading">Wybrane Projekty</span>
+            </h2>
+            <p class="mx-auto max-w-2xl text-slate-600">
+              <span data-i18n="home.projects.subheading"
+                >Poznaj konstrukcje, elektronikę i systemy autonomiczne budowane
+                w naszym kole.</span
+              >
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <!-- Octa -->
+            <a
+              href="projects.html"
+              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+            >
+              <div class="h-56 w-full overflow-hidden bg-slate-100">
+                <img
+                  src="images/projects/octa-droniada.jpg"
+                  alt="Oktokopter koaksjalny X8"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-agh-green"
+                  data-i18n="proj.octa.tag"
+                  >Platformy BSP · Grant Rektora 2026</span
+                >
+                <h3
+                  class="mt-2 text-lg font-bold text-slate-900 group-hover:text-agh-green"
+                  data-i18n="proj.octa.title"
+                >
+                  Oktokoptery koaksjalne X8: „Woda i Ogień” & „HydroLab”
+                </h3>
+              </div>
+            </a>
+
+            <!-- IARC -->
+            <a
+              href="projects.html"
+              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+            >
+              <div class="h-56 w-full overflow-hidden bg-slate-100">
+                <img
+                  src="images/projects/iarc-swarm.jpg"
+                  alt="Rój Autonomicznych Dronów IARC"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-agh-green"
+                  data-i18n="proj.iarc.tag"
+                  >Autonomia i Roje · MNiSW FERS N215</span
+                >
+                <h3
+                  class="mt-2 text-lg font-bold text-slate-900 group-hover:text-agh-green"
+                  data-i18n="proj.iarc.title"
+                >
+                  Rój Autonomicznych Dronów 5" (IARC Mission 10)
+                </h3>
+              </div>
+            </a>
+
+            <!-- Dron-Czołg -->
+            <a
+              href="projects.html"
+              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+            >
+              <div class="h-56 w-full overflow-hidden bg-slate-100">
+                <img
+                  src="images/projects/dron-czolg.jpg"
+                  alt="Dron Jezdno-Lotny Czołg"
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-agh-red"
+                  data-i18n="proj.tank.tag"
+                  >Hybryda UAV/UGV · Grant Rektora</span
+                >
+                <h3
+                  class="mt-2 text-lg font-bold text-slate-900 group-hover:text-agh-red"
+                  data-i18n="proj.tank.title"
+                >
+                  Dron Jezdno-Lotny „Czołg” (Platforma Lądowo-Powietrzna)
+                </h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-10 text-center">
+            <a
+              href="projects.html"
+              class="inline-flex items-center gap-2 rounded-lg border-2 border-agh-green px-7 py-3 font-semibold text-agh-green transition duration-200 hover:bg-agh-green hover:text-white"
+            >
+              <span data-i18n="home.projects.all"
+                >Zobacz wszystkie projekty</span
+              >
+              <svg
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
