@@ -25,12 +25,6 @@ const translations = {
     "hero.cta": "Zobacz nasze projekty",
     "hero.vcard": "Dodaj do kontaktów",
 
-    // Stats bar
-    "stats.grants.label": "Pozyskanych grantów (MNiSW, IDUB, ORLEN)",
-    "stats.awards.label": "Nagrody na zawodach w Polsce i na świecie",
-    "stats.payload.label": "Udźwigu drona załogowego TSO",
-    "stats.rpm.label": "Obr./min na stanowisku odrzutowym GTM160",
-
     // Sectors
     "sectors.heading": "Nasza Działalność",
     "sectors.autonomy.title": "Autonomia i Roje Dronów",
@@ -39,9 +33,12 @@ const translations = {
     "sectors.hardware.title": "Konstrukcje i Własne PCB",
     "sectors.hardware.desc":
       "Od oktokopterów X8, omnikopterów 6DoF, skrzydeł VTOL i dronów wodnych po autorską płytkę CM5 Drone Board oraz stanowisko silników odrzutowych.",
+    "sectors.contests.title": "Zawody Międzynarodowe",
+    "sectors.contests.desc":
+      "Reprezentujemy AGH na zawodach w Polsce i na świecie – m.in. IMAV (Strasburg), IARC (USA), Droniada GZM, NATO UAS Hackathon, Dual-Tech AGH i Robocomp.",
     "sectors.science.title": "Nauka, Granty i Warsztaty",
     "sectors.science.desc":
-      "Badania w tunelach aerodynamicznych, publikacje naukowe, konferencje międzynarodowe (m.in. SGEM Vienna, ZEA) oraz warsztaty dla studentów.",
+      "Badania w tunelach aerodynamicznych, publikacje naukowe, konferencje międzynarodowe (m.in. SGEM Vienna, ZEA), projekty grantowe oraz warsztaty dla studentów.",
 
     // Featured projects on index
     "home.projects.heading": "Nasze Konstrukcje i Projekty",
@@ -194,12 +191,6 @@ const translations = {
     "hero.cta": "Explore our projects",
     "hero.vcard": "Add to contacts",
 
-    // Stats bar
-    "stats.grants.label": "In research grants (Ministry, IDUB, ORLEN)",
-    "stats.awards.label": "Competition awards in Poland & worldwide",
-    "stats.payload.label": "Payload capacity of TSO manned drone",
-    "stats.rpm.label": "RPM on our GTM160 turbojet test bench",
-
     // Sectors
     "sectors.heading": "Our Activities",
     "sectors.autonomy.title": "Autonomy & Drone Swarms",
@@ -208,9 +199,12 @@ const translations = {
     "sectors.hardware.title": "Platforms & Custom PCBs",
     "sectors.hardware.desc":
       "From X8 octocopters, 6DoF omnicopters, VTOL wings, and water drones to our custom CM5 Drone Board and GTM160 turbojet test bench.",
+    "sectors.contests.title": "International Competitions",
+    "sectors.contests.desc":
+      "Representing AGH UST at national and international UAV competitions including IMAV (Strasbourg), IARC (USA), Droniada GZM, NATO UAS Hackathon, Dual-Tech AGH, and Robocomp.",
     "sectors.science.title": "Research, Grants & Workshops",
     "sectors.science.desc":
-      "Wind tunnel testing, scientific publications, international conferences (UAE, SGEM Vienna), and hands-on electronics & UAV workshops.",
+      "Wind tunnel testing, scientific publications, international conferences (UAE, SGEM Vienna), R&D grants, and hands-on electronics & UAV workshops.",
 
     // Featured projects on index
     "home.projects.heading": "Our Platforms & Projects",
