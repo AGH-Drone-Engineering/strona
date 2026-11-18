@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tryb ciemny (spójny z bazą wiedzy aghdrone.pages.dev) */
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+html.dark header {
+  background-color: rgba(15, 23, 42, 0.94);
+  border-color: #334155;
+}
+html.dark #mobile-menu {
+  background-color: #0f172a;
+  border-color: #334155;
+}
+html.dark .bg-white {
+  background-color: #0f172a;
+}
+html.dark article.bg-white,
+html.dark a.bg-white,
+html.dark div.bg-white.rounded-2xl {
+  background-color: #1e293b;
+}
+html.dark .bg-slate-50 {
+  background-color: #1e293b;
+}
+html.dark .bg-slate-100 {
+  background-color: #334155;
+}
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+  border-color: #334155;
+}
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #f8fafc;
+}
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #cbd5e1;
+}
+html.dark .text-slate-500 {
+  color: #94a3b8;
+}
+html.dark .text-agh-green {
+  color: #34d399;
+}
+html.dark .border-agh-green {
+  border-color: #10b981;
+}

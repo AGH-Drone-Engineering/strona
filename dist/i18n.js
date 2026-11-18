@@ -1,6 +1,7 @@
-// i18n.js — lightweight language switcher
+// i18n.js — lightweight language & theme switcher
 (function () {
   const STORAGE_KEY = "aghde-lang";
+  const THEME_KEY = "aghde-theme";
 
   function getLang() {
     return localStorage.getItem(STORAGE_KEY) || "pl";
@@ -8,6 +9,36 @@
 
   function setLang(lang) {
     localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  function getTheme() {
+    return localStorage.getItem(THEME_KEY) || "light";
+  }
+
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.textContent = theme === "dark" ? "☀️" : "🌙";
+      btn.setAttribute(
+        "title",
+        theme === "dark" ? "Przełącz na tryb jasny" : "Przełącz na tryb ciemny"
+      );
+    });
+  }
+
+  function toggleTheme() {
+    const next = getTheme() === "dark" ? "light" : "dark";
+    localStorage.setItem(THEME_KEY, next);
+    applyTheme(next);
+  }
+
+  // Apply theme immediately to prevent flash
+  if (localStorage.getItem(THEME_KEY) === "dark") {
+    document.documentElement.classList.add("dark");
   }
 
   function applyTranslations(lang) {
@@ -54,9 +85,13 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     applyTranslations(getLang());
+    applyTheme(getTheme());
 
     document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {
       btn.addEventListener("click", toggleLang);
+    });
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", toggleTheme);
     });
   });
 })();
