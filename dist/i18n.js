@@ -43,7 +43,7 @@
 
     // Swap club logo between light and dark variant
     document.querySelectorAll('img[src*="images/logo"]').forEach((img) => {
-      img.src = isDark ? "images/logo-dark.png" : "images/logo.png";
+      img.src = isDark ? "images/logo-dark.png?v=5" : "images/logo.png?v=5";
     });
   }
 
