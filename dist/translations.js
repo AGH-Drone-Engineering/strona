@@ -26,7 +26,7 @@ const translations = {
       "Algorytmy nawigacji, wizja komputerowa (YOLO, OpenCV), ROS 2 oraz autonomiczne misje i roje dronów.",
     "sectors.hardware.title": "Konstrukcje i Elektronika",
     "sectors.hardware.desc":
-      "Projektowanie i budowa wielowirnikowców, płatowców, dedykowanych płytek PCB oraz systemów embedded.",
+      "Projektowanie i budowa wielowirnikowców, dedykowanych płytek PCB oraz systemów embedded.",
     "sectors.contests.title": "Zawody Międzynarodowe",
     "sectors.contests.desc":
       "Reprezentujemy AGH na zawodach w Polsce i na świecie – m.in. Droniada, IMAV oraz IARC w USA.",
@@ -53,7 +53,7 @@ const translations = {
     "about.p1":
       "AGH Drone Engineering to studenckie koło naukowe zrzeszające osoby z pasją do bezzałogowych statków powietrznych, robotyki mobilnej, sztucznej inteligencji i elektroniki.",
     "about.p2":
-      "Budujemy autorskie platformy latające – od lekkich rojów dronów 5-calowych, przez ciężkie oktokoptery koaksjalne X8, aż po samoloty kompozytowe i napęd odrzutowy.",
+      "Budujemy autorskie platformy latające – od lekkich rojów dronów 5-calowych, przez ciężkie oktokoptery koaksjalne X8, aż po dedykowaną elektronikę pokładową i napęd odrzutowy.",
     "about.board.heading": "Zarząd Koła",
     "about.board.supervisor": "Opiekun Naukowy",
     "about.board.chairman": "Przewodniczący",
@@ -90,7 +90,7 @@ const translations = {
       "Navigation algorithms, computer vision (YOLO, OpenCV), ROS 2, autonomous missions, and drone swarms.",
     "sectors.hardware.title": "Hardware & Airframes",
     "sectors.hardware.desc":
-      "Designing and building multirotors, fixed-wing UAVs, custom PCBs, and embedded flight systems.",
+      "Designing and building multirotors, custom PCBs, and embedded flight systems.",
     "sectors.contests.title": "International Competitions",
     "sectors.contests.desc":
       "Representing AGH UST at national and international UAV competitions including Droniada, IMAV, and IARC.",
@@ -117,7 +117,7 @@ const translations = {
     "about.p1":
       "AGH Drone Engineering is a student scientific club bringing together enthusiasts of unmanned aerial vehicles, mobile robotics, artificial intelligence, and electronics.",
     "about.p2":
-      "We build custom aerial platforms – from 5-inch autonomous drone swarms and heavy X8 coaxial octocopters to composite fixed-wing aircraft and micro-jet propulsion systems.",
+      "We build custom aerial platforms – from 5-inch autonomous drone swarms and heavy X8 coaxial octocopters to custom flight electronics and micro-jet propulsion systems.",
     "about.board.heading": "Club Board",
     "about.board.supervisor": "Faculty Advisor",
     "about.board.chairman": "Chairman",
