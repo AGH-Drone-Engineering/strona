@@ -21,13 +21,7 @@ put aghde.vcf public_html/new-website-production/aghde.vcf
 put images/logo.png public_html/new-website-production/images/logo.png
 put images/team.jpg public_html/new-website-production/images/team.jpg
 put images/favicons/favicon.png public_html/new-website-production/images/favicons/favicon.png
-put images/projects/octa-droniada.jpg public_html/new-website-production/images/projects/octa-droniada.jpg
-put images/projects/iarc-swarm.jpg public_html/new-website-production/images/projects/iarc-swarm.jpg
-put images/projects/dron-czolg.jpg public_html/new-website-production/images/projects/dron-czolg.jpg
-put images/projects/cm5-pcb.jpg public_html/new-website-production/images/projects/cm5-pcb.jpg
-put images/projects/salamandra.jpg public_html/new-website-production/images/projects/salamandra.jpg
-put images/projects/omnicopter-uav.jpg public_html/new-website-production/images/projects/omnicopter-uav.jpg
-put images/projects/akademia-bsp.jpg public_html/new-website-production/images/projects/akademia-bsp.jpg
+put images/projects/*.jpg public_html/new-website-production/images/projects/
 bye
 EOF
 

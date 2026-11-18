@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AGH Drone Engineering - Koło Naukowe AGH UST"
+      content="AGH Drone Engineering - Studenckie Koło Naukowe AGH UST"
     />
     <title>AGH Drone Engineering</title>
 
@@ -29,6 +29,17 @@
       .i18n-loading {
         opacity: 0;
       }
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body
@@ -51,7 +62,7 @@
           </span>
         </a>
 
-        <nav class="hidden items-center justify-between gap-8 md:flex">
+        <nav class="hidden items-center justify-between gap-7 md:flex">
           <a
             href="index.html"
             class="font-semibold text-agh-green transition duration-200 hover:text-agh-greenHover"
@@ -67,6 +78,16 @@
             class="font-medium text-slate-600 transition duration-200 hover:text-agh-green"
             ><span data-i18n="nav.about">O nas</span></a
           >
+          <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3.5 py-2 text-sm font-semibold text-slate-700 transition duration-200 hover:bg-agh-green/10 hover:text-agh-green"
+          >
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span data-i18n="nav.wiki">Baza wiedzy (Dla członków)</span>
+          </a>
           <a
             href="#contact"
             class="rounded-lg border-2 border-agh-green px-5 py-2 font-semibold text-agh-green transition duration-200 hover:bg-agh-green hover:text-white"
@@ -119,6 +140,12 @@
             ><span data-i18n="nav.about">O nas</span></a
           >
           <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="mobile-link text-lg font-medium text-slate-700 hover:text-agh-green"
+            ><span data-i18n="nav.wiki">Baza wiedzy (Dla członków)</span></a
+          >
+          <a
             href="#contact"
             class="mobile-link inline-block rounded-lg border-2 border-agh-green px-5 py-2 font-semibold text-agh-green hover:bg-agh-green hover:text-white"
             ><span data-i18n="nav.join">Kontakt</span></a
@@ -141,8 +168,14 @@
         <img
           src="images/logo.png"
           alt="AGH Drone Engineering"
-          class="mb-8 h-36 w-auto md:h-48"
+          class="mb-6 h-36 w-auto md:h-44"
         />
+
+        <span
+          class="mb-3 inline-block rounded-full bg-agh-green/10 px-4 py-1.5 text-xs font-bold tracking-widest text-agh-green"
+          data-i18n="hero.badge"
+          >STUDENCKIE KOŁO NAUKOWE AGH UST</span
+        >
 
         <h1
           class="mb-4 text-4xl font-extrabold tracking-tight text-slate-900 md:mb-6 md:text-6xl"
@@ -156,18 +189,18 @@
           class="mb-8 max-w-2xl text-lg leading-normal text-slate-600 md:mb-10 md:leading-relaxed"
         >
           <span data-i18n="hero.subtitle"
-            >Koło naukowe AGH UST zajmujące się projektowaniem, budową i
-            programowaniem autonomicznych bezzałogowych statków powietrznych
-            oraz robotów mobilnych.</span
+            >Budujemy drony automatyczne: autonomia z kontrolą operatora.
+            Realizujemy projekty badawcze i startujemy w zawodach robotyki
+            powietrznej na całym świecie.</span
           >
         </p>
 
         <div class="flex flex-col gap-4 sm:flex-row">
           <a
             href="projects.html"
-            class="rounded-lg bg-agh-green px-8 py-3.5 font-semibold text-white transition duration-200 hover:bg-agh-greenHover"
+            class="rounded-lg bg-agh-green px-8 py-3.5 font-semibold text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-agh-greenHover"
           >
-            <span data-i18n="hero.cta">Nasze projekty</span>
+            <span data-i18n="hero.cta">Zobacz nasze projekty</span>
           </a>
           <a
             href="aghde.vcf"
@@ -180,7 +213,7 @@
 
       <!-- Social media -->
       <section
-        class="relative z-20 border-y border-slate-200 bg-slate-50 py-8 md:py-10"
+        class="relative z-20 border-y border-slate-200 bg-slate-50 py-7 md:py-9"
       >
         <div
           class="mx-auto flex items-center justify-center gap-8 px-4 sm:gap-12"
@@ -191,12 +224,7 @@
             class="flex items-center gap-2 font-medium text-slate-600 transition duration-200 hover:text-slate-900"
             aria-label="GitHub"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -212,12 +240,7 @@
             class="flex items-center gap-2 font-medium text-slate-600 transition duration-200 hover:text-agh-green"
             aria-label="LinkedIn"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
@@ -233,12 +256,7 @@
             class="flex items-center gap-2 font-medium text-slate-600 transition duration-200 hover:text-blue-600"
             aria-label="Facebook"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
@@ -254,12 +272,7 @@
             class="flex items-center gap-2 font-medium text-slate-600 transition duration-200 hover:text-agh-red"
             aria-label="Instagram"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 2.535c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
@@ -271,10 +284,40 @@
         </div>
       </section>
 
+      <!-- Key Metrics Bar -->
+      <section class="reveal border-b border-slate-200 bg-white py-12">
+        <div class="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 md:grid-cols-4">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center">
+            <div class="text-3xl font-extrabold text-agh-green md:text-4xl">350+ tys. zł</div>
+            <p class="mt-2 text-xs font-semibold text-slate-600 md:text-sm" data-i18n="stats.grants.label">
+              Pozyskanych grantów (MNiSW, IDUB, ORLEN)
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center">
+            <div class="text-3xl font-extrabold text-agh-red md:text-4xl">18+</div>
+            <p class="mt-2 text-xs font-semibold text-slate-600 md:text-sm" data-i18n="stats.awards.label">
+              Nagrody na zawodach w Polsce i na świecie
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center">
+            <div class="text-3xl font-extrabold text-slate-900 md:text-4xl">100 kg</div>
+            <p class="mt-2 text-xs font-semibold text-slate-600 md:text-sm" data-i18n="stats.payload.label">
+              Udźwigu drona załogowego TSO
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center">
+            <div class="text-3xl font-extrabold text-agh-green md:text-4xl">117 000</div>
+            <p class="mt-2 text-xs font-semibold text-slate-600 md:text-sm" data-i18n="stats.rpm.label">
+              Obr./min na stanowisku odrzutowym GTM160
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- Sectors section -->
       <section
         id="sectors"
-        class="relative z-10 mx-auto max-w-7xl px-8 py-16 md:py-24"
+        class="reveal relative z-10 mx-auto max-w-7xl px-8 py-16 md:py-24"
       >
         <h2 class="mb-12 text-center text-3xl font-bold text-slate-900">
           <span data-i18n="sectors.heading">Nasza Działalność</span>
@@ -282,105 +325,72 @@
 
         <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-agh-green hover:shadow-md"
           >
             <div class="relative z-10">
               <div
                 class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-agh-green/10 text-agh-green"
               >
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
-                  />
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                 </svg>
               </div>
               <h3 class="mb-3 text-xl font-bold text-slate-900">
-                <span data-i18n="sectors.autonomy.title">Autonomia i AI</span>
+                <span data-i18n="sectors.autonomy.title">Autonomia i Roje Dronów</span>
               </h3>
               <p class="text-slate-600">
                 <span data-i18n="sectors.autonomy.desc"
-                  >Algorytmy nawigacji, wizja komputerowa (YOLO, OpenCV), ROS 2
-                  oraz autonomiczne misje i roje dronów.</span
+                  >Rozpoznawanie obrazu (YOLO, AprilTag, Optical Flow),
+                  obliczenia na pokładzie (Raspberry Pi CM5), komunikacja LoRa w
+                  roju oraz kooperacja wielu jednostek.</span
                 >
               </p>
             </div>
           </div>
 
           <div
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-agh-red hover:shadow-md"
           >
             <div class="relative z-10">
               <div
                 class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-agh-red/10 text-agh-red"
               >
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                  />
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
               </div>
               <h3 class="mb-3 text-xl font-bold text-slate-900">
-                <span data-i18n="sectors.hardware.title"
-                  >Konstrukcje i Elektronika</span
-                >
+                <span data-i18n="sectors.hardware.title">Konstrukcje i Własne PCB</span>
               </h3>
               <p class="text-slate-600">
                 <span data-i18n="sectors.hardware.desc"
-                  >Projektowanie i budowa wielowirnikowców, hybryd
-                  lądowo-powietrznych, dedykowanych płytek PCB oraz systemów
-                  embedded.</span
+                  >Od oktokopterów X8, omnikopterów 6DoF, skrzydeł VTOL i dronów
+                  wodnych po autorską płytkę CM5 Drone Board oraz stanowisko
+                  silników odrzutowych.</span
                 >
               </p>
             </div>
           </div>
 
           <div
-            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:border-slate-900 hover:shadow-md"
+            class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-900 hover:shadow-md"
           >
             <div class="relative z-10">
               <div
                 class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-slate-900"
               >
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
-                  />
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
                 </svg>
               </div>
               <h3 class="mb-3 text-xl font-bold text-slate-900">
-                <span data-i18n="sectors.contests.title"
-                  >Zawody Międzynarodowe</span
-                >
+                <span data-i18n="sectors.science.title">Nauka, Granty i Warsztaty</span>
               </h3>
               <p class="text-slate-600">
-                <span data-i18n="sectors.contests.desc"
-                  >Reprezentujemy AGH na zawodach w Polsce i na świecie – m.in.
-                  Droniada GZM, IMAV (Strasburg), IARC (USA), Dual-Tech AGH i
-                  Robocomp.</span
+                <span data-i18n="sectors.science.desc"
+                  >Badania w tunelach aerodynamicznych, publikacje naukowe,
+                  konferencje międzynarodowe (m.in. SGEM Vienna, ZEA) oraz
+                  warsztaty dla studentów.</span
                 >
               </p>
             </div>
@@ -389,16 +399,16 @@
       </section>
 
       <!-- Featured Projects Preview -->
-      <section class="border-t border-slate-200 bg-white py-16 md:py-24">
+      <section class="reveal border-t border-slate-200 bg-slate-50 py-16 md:py-24">
         <div class="mx-auto max-w-7xl px-8">
           <div class="mb-12 text-center">
             <h2 class="mb-3 text-3xl font-bold text-slate-900">
-              <span data-i18n="home.projects.heading">Wybrane Projekty</span>
+              <span data-i18n="home.projects.heading">Nasze Konstrukcje i Projekty</span>
             </h2>
             <p class="mx-auto max-w-2xl text-slate-600">
               <span data-i18n="home.projects.subheading"
-                >Poznaj konstrukcje, elektronikę i systemy autonomiczne budowane
-                w naszym kole.</span
+                >Od ciężkich oktokopterów X8 i autonomicznych rojów 5" po napęd
+                odrzutowy, omnikoptery i drony załogowe.</span
               >
             </p>
           </div>
@@ -407,12 +417,12 @@
             <!-- Octa -->
             <a
               href="projects.html"
-              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-agh-green hover:shadow-md"
             >
               <div class="h-56 w-full overflow-hidden bg-slate-100">
                 <img
                   src="images/projects/octa-droniada.jpg"
-                  alt="Oktokopter koaksjalny X8"
+                  alt="Octocopter X8"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
@@ -420,13 +430,13 @@
                 <span
                   class="text-xs font-bold uppercase tracking-wider text-agh-green"
                   data-i18n="proj.octa.tag"
-                  >Platformy BSP · Grant Rektora 2026</span
+                  >PLATFORMA BAZOWA X8 · WYMIENNE MODUŁY</span
                 >
                 <h3
                   class="mt-2 text-lg font-bold text-slate-900 group-hover:text-agh-green"
                   data-i18n="proj.octa.title"
                 >
-                  Oktokoptery koaksjalne X8: „Woda i Ogień” & „HydroLab”
+                  Octocopter X8: „Woda i Ogień”, „HydroLab” i Moduł Audio
                 </h3>
               </div>
             </a>
@@ -434,12 +444,12 @@
             <!-- IARC -->
             <a
               href="projects.html"
-              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-agh-green hover:shadow-md"
             >
               <div class="h-56 w-full overflow-hidden bg-slate-100">
                 <img
                   src="images/projects/iarc-swarm.jpg"
-                  alt="Rój Autonomicznych Dronów IARC"
+                  alt="Rój Dronów 5 cali IARC"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
@@ -447,40 +457,40 @@
                 <span
                   class="text-xs font-bold uppercase tracking-wider text-agh-green"
                   data-i18n="proj.iarc.tag"
-                  >Autonomia i Roje · MNiSW FERS N215</span
+                  >RÓJ AUTONOMICZNY · IARC USA 2025 & 2026</span
                 >
                 <h3
                   class="mt-2 text-lg font-bold text-slate-900 group-hover:text-agh-green"
                   data-i18n="proj.iarc.title"
                 >
-                  Rój Autonomicznych Dronów 5" (IARC Mission 10)
+                  Rój Dronów 5": Autonomiczne Wykrywanie Min PFM-1
                 </h3>
               </div>
             </a>
 
-            <!-- Dron-Czołg -->
+            <!-- CM5 PCB -->
             <a
               href="projects.html"
-              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+              class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-agh-red hover:shadow-md"
             >
               <div class="h-56 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="images/projects/dron-czolg.jpg"
-                  alt="Dron Jezdno-Lotny Czołg"
+                  src="images/projects/cm5-pcb.jpg"
+                  alt="CM5 Drone Board PCB"
                   class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
               <div class="p-6">
                 <span
                   class="text-xs font-bold uppercase tracking-wider text-agh-red"
-                  data-i18n="proj.tank.tag"
-                  >Hybryda UAV/UGV · Grant Rektora</span
+                  data-i18n="proj.pcb.tag"
+                  >AUTORSKA ELEKTRONIKA POKŁADOWA · REV. 1.0 (01.2026)</span
                 >
                 <h3
                   class="mt-2 text-lg font-bold text-slate-900 group-hover:text-agh-red"
-                  data-i18n="proj.tank.title"
+                  data-i18n="proj.pcb.title"
                 >
-                  Dron Jezdno-Lotny „Czołg” (Platforma Lądowo-Powietrzna)
+                  CM5 Drone Board – Płytka Nośna pod Raspberry Pi CM5
                 </h3>
               </div>
             </a>
@@ -489,47 +499,185 @@
           <div class="mt-10 text-center">
             <a
               href="projects.html"
-              class="inline-flex items-center gap-2 rounded-lg border-2 border-agh-green px-7 py-3 font-semibold text-agh-green transition duration-200 hover:bg-agh-green hover:text-white"
+              class="inline-flex items-center gap-2 rounded-lg bg-agh-green px-8 py-3.5 font-semibold text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-agh-greenHover"
             >
               <span data-i18n="home.projects.all"
-                >Zobacz wszystkie projekty</span
+                >Zobacz wszystkie projekty i specyfikacje</span
               >
-              <svg
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
           </div>
         </div>
       </section>
 
+      <!-- Zawody i Wyniki Timeline (from Slide 20) -->
+      <section class="reveal border-t border-slate-200 bg-white py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-8">
+          <div class="mb-12 text-center">
+            <h2 class="mb-3 text-3xl font-bold text-slate-900">
+              <span data-i18n="timeline.heading">Zawody i Wyniki (2018–2026)</span>
+            </h2>
+            <p class="mx-auto max-w-2xl text-slate-600">
+              <span data-i18n="timeline.subheading"
+                >Regularnie stajemy na podium krajowych i międzynarodowych
+                zawodów bezzałogowych oraz konferencji naukowych.</span
+              >
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+            <!-- 2026 -->
+            <div class="rounded-2xl border-t-4 border-t-agh-green border border-slate-200 bg-slate-50 p-6">
+              <div class="mb-4 text-3xl font-extrabold text-slate-900">2026</div>
+              <ul class="space-y-3 text-sm text-slate-600">
+                <li>
+                  <strong class="block text-slate-900">09.2026 · IMAV, Strasburg</strong>
+                  8. miejsce na świecie, najlepszy polski zespół
+                </li>
+                <li>
+                  <strong class="block text-slate-900">08.2026 · IARC, Huntsville (USA)</strong>
+                  Udział w finale w USA z autonomicznym rojem dronów
+                </li>
+                <li>
+                  <strong class="block text-slate-900">06.2026 · Droniada, Gliwice</strong>
+                  <span class="font-semibold text-agh-green">II miejsce</span> w konkurencji „Woda i Ogień”
+                </li>
+                <li>
+                  <strong class="block text-slate-900">05.2026 · Konferencja Hutnicza</strong>
+                  <span class="font-semibold text-agh-green">I miejsce</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2025 -->
+            <div class="rounded-2xl border-t-4 border-t-agh-red border border-slate-200 bg-slate-50 p-6">
+              <div class="mb-4 text-3xl font-extrabold text-slate-900">2025</div>
+              <ul class="space-y-3 text-sm text-slate-600">
+                <li>
+                  <strong class="block text-slate-900">10.2025 · Robocomp</strong>
+                  <span class="font-semibold text-agh-green">I miejsce</span>
+                </li>
+                <li>
+                  <strong class="block text-slate-900">09.2025 · IARC, Huntsville (USA)</strong>
+                  Udział w USA, 11 osób w zespole
+                </li>
+                <li>
+                  <strong class="block text-slate-900">06.2025 · Droniada GZM</strong>
+                  <span class="font-semibold text-agh-green">II miejsce</span> Inspekcja, <span class="font-semibold text-agh-green">II miejsce</span> Sztafeta
+                </li>
+                <li>
+                  <strong class="block text-slate-900">05.2025 · Dual-Tech AGH</strong>
+                  <span class="font-semibold text-agh-green">I miejsce</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2024 -->
+            <div class="rounded-2xl border-t-4 border-t-agh-green border border-slate-200 bg-slate-50 p-6">
+              <div class="mb-4 text-3xl font-extrabold text-slate-900">2024</div>
+              <ul class="space-y-3 text-sm text-slate-600">
+                <li>
+                  <strong class="block text-slate-900">11.2024 · Robocomp, Kraków</strong>
+                  <span class="font-semibold text-agh-green">I miejsce</span>, kategoria Freestyle
+                </li>
+                <li>
+                  <strong class="block text-slate-900">09.2024 · Droniada OBLot</strong>
+                  <span class="font-semibold text-agh-green">I miejsce</span>, Sztafeta
+                </li>
+                <li>
+                  <strong class="block text-slate-900">06.2024 · NATO UAS Hackathon</strong>
+                  <span class="font-semibold text-agh-green">I miejsce</span>, Visual Identification
+                </li>
+                <li>
+                  <strong class="block text-slate-900">06.2024 · Droniada</strong>
+                  III m. Inspekcja, II m. Sztafeta
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2018-2023 -->
+            <div class="rounded-2xl border-t-4 border-t-slate-800 border border-slate-200 bg-slate-50 p-6">
+              <div class="mb-4 text-3xl font-extrabold text-slate-900">2018–2023</div>
+              <ul class="space-y-3 text-sm text-slate-600">
+                <li>
+                  <strong class="block text-slate-900">2023 · Droniada, BITEhack, 60. Hutnicza, 64. Barbórkowa</strong>
+                  <span class="font-semibold text-agh-green">4× I miejsce</span> (Intruz, AI, Informatyka)
+                </li>
+                <li>
+                  <strong class="block text-slate-900">2021–2022 · Droniada</strong>
+                  I m. Mistrzostwa Operatorów, II m. Intruz i Drzewo Życia
+                </li>
+                <li>
+                  <strong class="block text-slate-900">2019–2020 · Robotic Arena & Robomaticon</strong>
+                  <span class="font-semibold text-agh-green">I miejsca</span> (DeathRace, Robotic Arena)
+                </li>
+                <li>
+                  <strong class="block text-slate-900">2019 · Intel ISEF, Phoenix (USA)</strong>
+                  <span class="font-semibold text-agh-red">3. miejsce na świecie</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Club Member Zone Banner (aghdrone.pages.dev) -->
+      <section class="reveal border-t border-slate-200 bg-white px-6 py-12">
+        <div
+          class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 rounded-2xl border-2 border-agh-green/20 bg-agh-green/5 p-8 md:flex-row md:p-10"
+        >
+          <div class="max-w-2xl text-center md:text-left">
+            <span
+              class="mb-2 inline-block rounded-md bg-agh-green px-3 py-1 text-xs font-bold uppercase tracking-wider text-white"
+              data-i18n="members.badge"
+              >STREFA CZŁONKA KOŁA</span
+            >
+            <h3
+              class="mt-2 text-2xl font-extrabold text-slate-900 md:text-3xl"
+              data-i18n="members.title"
+            >
+              Baza wiedzy i zadania AGH Drone Engineering
+            </h3>
+            <p class="mt-2 text-slate-600" data-i18n="members.desc">
+              Należysz do koła? W wewnętrznej bazie wiedzy znajdziesz instrukcje
+              budowy drona krok po kroku (ArduPilot, MAVLink, ROS 2, Wizja, PCB,
+              Mechanika) oraz panel ze swoimi taskami z GitHuba.
+            </p>
+          </div>
+          <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="shrink-0 inline-flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-4 font-bold text-white shadow-sm transition duration-200 hover:bg-agh-green"
+          >
+            <span data-i18n="members.cta"
+              >Przejdź do Bazy Wiedzy (aghdrone.pages.dev)</span
+            >
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       <section
-        class="relative z-10 border-t border-slate-200 bg-slate-50 py-16 md:py-24"
+        class="reveal relative z-10 border-t border-slate-200 bg-slate-50 py-16 md:py-24"
         id="contact"
       >
         <div class="relative z-20 mx-auto max-w-4xl px-4 text-center">
           <h2 class="mb-6 text-4xl font-extrabold text-slate-900 md:text-5xl">
-            <span data-i18n="contact.title.1">Chcesz latać i tworzyć</span>
+            <span data-i18n="contact.title.1">Dołącz do</span>
             <br />
             <span class="text-agh-green"
-              ><span data-i18n="contact.title.2">z nami?</span></span
+              ><span data-i18n="contact.title.2">AGH Drone Engineering</span></span
             >
           </h2>
 
           <p class="mb-10 text-lg text-slate-600">
             <span data-i18n="contact.subtitle"
-              >Szukamy pasjonatów robotyki, sztucznej inteligencji, elektroniki,
-              mechaniki i awiacji. Skontaktuj się z nami lub śledź nasze media
-              społecznościowe!</span
+              >Elektronika, oprogramowanie, mechanika i loty testowe. Napisz do
+              nas lub śledź nasze media społecznościowe!</span
             >
           </p>
 
@@ -580,7 +728,7 @@
           </p>
           <p class="mt-1 text-sm text-slate-500">
             <span data-i18n="footer.faculty"
-              >Koło Naukowe AGH UST w Krakowie.</span
+              >Studenckie Koło Naukowe AGH UST w Krakowie.</span
             >
           </p>
         </div>
@@ -590,8 +738,15 @@
           </h3>
           <a
             href="mailto:drone@agh.edu.pl"
-            class="text-lg font-medium text-agh-green transition duration-200 hover:underline"
+            class="block text-lg font-medium text-agh-green transition duration-200 hover:underline"
             >drone@agh.edu.pl</a
+          >
+          <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="mt-2 inline-block text-sm font-semibold text-slate-600 hover:text-agh-green hover:underline"
+            data-i18n="footer.wiki"
+            >Baza wiedzy dla członków koła →</a
           >
         </div>
         <div class="mx-auto flex space-x-6 justify-self-end md:mx-0">
@@ -600,12 +755,7 @@
             target="_blank"
             class="text-slate-500 transition duration-200 hover:text-slate-900"
             aria-label="GitHub"
-            ><svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            ><svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -620,12 +770,7 @@
             class="text-slate-500 transition duration-200 hover:text-agh-green"
             aria-label="LinkedIn"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
@@ -640,12 +785,7 @@
             class="text-slate-500 transition duration-200 hover:text-blue-600"
             aria-label="Facebook"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
@@ -660,12 +800,7 @@
             class="text-slate-500 transition duration-200 hover:text-agh-red"
             aria-label="Instagram"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 2.535c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
@@ -695,5 +830,16 @@
     </script>
     <script src="i18n.js" defer></script>
     <script src="mobile.js" defer></script>
+    <script>
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+    </script>
   </body>
 </html>

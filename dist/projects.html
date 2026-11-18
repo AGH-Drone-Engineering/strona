@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Nasze Projekty - AGH Drone Engineering"
+      content="Projekty i Konstrukcje - AGH Drone Engineering"
     />
     <title>Projekty - AGH Drone Engineering</title>
 
@@ -29,6 +29,9 @@
       .i18n-loading {
         opacity: 0;
       }
+      .zoomable {
+        cursor: zoom-in;
+      }
     </style>
   </head>
   <body
@@ -51,7 +54,7 @@
           </span>
         </a>
 
-        <nav class="hidden items-center justify-between gap-8 md:flex">
+        <nav class="hidden items-center justify-between gap-7 md:flex">
           <a
             href="index.html"
             class="font-medium text-slate-600 transition duration-200 hover:text-agh-green"
@@ -67,6 +70,16 @@
             class="font-medium text-slate-600 transition duration-200 hover:text-agh-green"
             ><span data-i18n="nav.about">O nas</span></a
           >
+          <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="inline-flex items-center gap-1.5 rounded-lg bg-slate-100 px-3.5 py-2 text-sm font-semibold text-slate-700 transition duration-200 hover:bg-agh-green/10 hover:text-agh-green"
+          >
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span data-i18n="nav.wiki">Baza wiedzy (Dla członków)</span>
+          </a>
           <a
             href="index.html#contact"
             class="rounded-lg border-2 border-agh-green px-5 py-2 font-semibold text-agh-green transition duration-200 hover:bg-agh-green hover:text-white"
@@ -119,6 +132,12 @@
             ><span data-i18n="nav.about">O nas</span></a
           >
           <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="mobile-link text-lg font-medium text-slate-700 hover:text-agh-green"
+            ><span data-i18n="nav.wiki">Baza wiedzy (Dla członków)</span></a
+          >
+          <a
             href="index.html#contact"
             class="mobile-link inline-block rounded-lg border-2 border-agh-green px-5 py-2 font-semibold text-agh-green hover:bg-agh-green hover:text-white"
             ><span data-i18n="nav.join">Kontakt</span></a
@@ -145,354 +164,533 @@
           </h1>
           <p class="mx-auto max-w-2xl text-lg text-slate-600">
             <span data-i18n="projects.hero.subtitle"
-              >Od autonomicznych rojów dronów 5-calowych i ciężkich oktokopterów
-              koaksjalnych X8, przez hybrydy jezdno-lotne i autorskie płytki
-              PCB, aż po napęd odrzutowy.</span
+              >Przegląd platform latających, nawodnych, lądowo-powietrznych,
+              autorskiej elektroniki pokładowej oraz stanowisk badawczych
+              rozwijanych w AGH Drone Engineering.</span
             >
           </p>
-
-          <!-- Category filter tabs -->
-          <div class="mt-10 flex flex-wrap justify-center gap-3" id="project-tabs">
-            <button
-              data-filter="all"
-              class="project-tab rounded-lg bg-agh-green px-5 py-2.5 text-sm font-semibold text-white transition"
-            >
-              <span data-i18n="projects.tab.all">Wszystkie</span>
-            </button>
-            <button
-              data-filter="uav"
-              class="project-tab rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-agh-green hover:text-agh-green"
-            >
-              <span data-i18n="projects.tab.uav">Platformy BSP</span>
-            </button>
-            <button
-              data-filter="ai"
-              class="project-tab rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-agh-green hover:text-agh-green"
-            >
-              <span data-i18n="projects.tab.ai">Autonomia i Roje</span>
-            </button>
-            <button
-              data-filter="hw"
-              class="project-tab rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-agh-green hover:text-agh-green"
-            >
-              <span data-i18n="projects.tab.hw">Elektronika i Napędy</span>
-            </button>
-            <button
-              data-filter="edu"
-              class="project-tab rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-agh-green hover:text-agh-green"
-            >
-              <span data-i18n="projects.tab.edu">Szkolenia</span>
-            </button>
-          </div>
+          <p class="mt-4 text-xs font-medium text-slate-500" data-i18n="projects.click.hint">
+            Kliknij na dowolne zdjęcie, aby otworzyć podgląd w pełnym rozmiarze.
+          </p>
         </div>
       </section>
 
-      <!-- Projects Grid -->
+      <!-- Projects List -->
       <section class="mx-auto max-w-7xl px-6 py-16 md:py-20">
-        <div class="grid grid-cols-1 gap-10 md:grid-cols-2" id="projects-grid">
-          <!-- 1. Octa X8 -->
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+          <!-- 1. Octocopter X8 (Full Width Feature) -->
           <article
-            data-category="uav ai"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md md:col-span-2"
           >
-            <div class="h-72 w-full overflow-hidden bg-slate-100">
-              <img
-                src="images/projects/octa-droniada.jpg"
-                alt="Oktokopter koaksjalny X8 podczas lotu na Droniadzie"
-                class="h-full w-full object-cover transition duration-500 hover:scale-105"
-              />
-            </div>
-            <div class="flex flex-1 flex-col p-8">
-              <span
-                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
-                data-i18n="proj.octa.tag"
-                >Platformy BSP · Grant Rektora 2026</span
-              >
-              <h2
-                class="mb-3 text-2xl font-bold text-slate-900"
-                data-i18n="proj.octa.title"
-              >
-                Oktokoptery koaksjalne X8: „Woda i Ogień” & „HydroLab”
-              </h2>
-              <p
-                class="mb-6 flex-1 leading-relaxed text-slate-600"
-                data-i18n="proj.octa.desc"
-              >
-                Bliźniacze ciężkie platformy wielowirnikowe w układzie
-                koaksjalnym X8 (8 silników T-Motor MN4006, śmigła 15", MTOM 4,9
-                kg, czas lotu do 35 min, Cube Orange+ z ArduPilotem i Raspberry
-                Pi CM5). Wariant „Woda i Ogień” (Octa1) realizuje detekcję
-                wizyjną YOLO, lokalizację źródła dźwięku i zrzut ładunku
-                ratowniczego (II miejsce na Droniadzie GZM 2026). Wariant
-                „HydroLab” (Octa2) to mobilne laboratorium do badania jakości
-                wody in situ (pH, EC, temperatura) przez most radiowy ESP-NOW.
-              </p>
-              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="rounded-md bg-slate-100 px-3 py-1">X8 Coaxial · 4,9 kg</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Cube Orange+ / ArduPilot</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Raspberry Pi CM5 · YOLO</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">ESP-NOW HydroLab</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="grid grid-cols-2 gap-1 bg-slate-100">
+                <img
+                  src="images/projects/octa-droniada.jpg"
+                  alt="Octocopter X8 w locie podczas zawodów Droniada"
+                  class="zoomable h-72 w-full object-cover lg:h-full"
+                />
+                <img
+                  src="images/projects/octa-hydrolab.jpg"
+                  alt="Octocopter X8 z podwieszonym modułem HydroLab"
+                  class="zoomable h-72 w-full object-cover lg:h-full"
+                />
+              </div>
+              <div class="flex flex-col justify-center p-8 lg:p-10">
+                <span
+                  class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
+                  data-i18n="proj.octa.tag"
+                  >PLATFORMA BAZOWA X8 · WYMIENNE MODUŁY</span
+                >
+                <h2
+                  class="mb-3 text-2xl font-bold text-slate-900"
+                  data-i18n="proj.octa.title"
+                >
+                  Octocopter X8: „Woda i Ogień”, „HydroLab” i Moduł Audio
+                </h2>
+                <p
+                  class="mb-6 leading-relaxed text-slate-600"
+                  data-i18n="proj.octa.desc"
+                >
+                  Ciężka platforma wielowirnikowa w układzie koncentrycznym X8 z
+                  autopilotem Cube Orange (ArduPilot) oraz komputerem pokładowym
+                  Raspberry Pi CM5. Jedna baza lotna współpracuje z wymiennymi
+                  modułami zadaniowymi: kierunkowymi mikrofonami w osiach X/Y
+                  wskazującymi źródło dźwięku, modułem wizyjnym AI (YOLO na
+                  CM5), mobilnym laboratorium HydroLab (pomiar pH, przewodności
+                  i temperatury wody) oraz kartą sieciową dalekiego zasięgu.
+                </p>
+                <div class="grid grid-cols-3 gap-3 mb-6">
+                  <div class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-center">
+                    <div class="text-lg font-extrabold text-agh-green">8 silników</div>
+                    <div class="text-xs text-slate-500">układ X8 · śmigła 15"</div>
+                  </div>
+                  <div class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-center">
+                    <div class="text-lg font-extrabold text-agh-green">4,9–11 kg</div>
+                    <div class="text-xs text-slate-500">masa startowa / maks.</div>
+                  </div>
+                  <div class="rounded-xl bg-slate-50 border border-slate-200 p-3 text-center">
+                    <div class="text-lg font-extrabold text-agh-green">35–45 min</div>
+                    <div class="text-xs text-slate-500">czas lotu (6S 30 Ah)</div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Cube Orange + ArduPilot</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Raspberry Pi CM5 · YOLO</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Mikrofony X/Y Audio</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">HydroLab (pH, EC, temp.)</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- 2. Rój dronów IARC -->
+          <!-- 2. Rój dronów 5": IARC (Full Width Feature) -->
           <article
-            data-category="ai uav"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md md:col-span-2"
           >
-            <div class="h-72 w-full overflow-hidden bg-slate-100">
-              <img
-                src="images/projects/iarc-swarm.jpg"
-                alt="Rój autonomicznych dronów 5 cali na zawodach IARC w USA"
-                class="h-full w-full object-cover transition duration-500 hover:scale-105"
-              />
-            </div>
-            <div class="flex flex-1 flex-col p-8">
-              <span
-                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
-                data-i18n="proj.iarc.tag"
-                >Autonomia i Roje · MNiSW FERS N215</span
-              >
-              <h2
-                class="mb-3 text-2xl font-bold text-slate-900"
-                data-i18n="proj.iarc.title"
-              >
-                Rój Autonomicznych Dronów 5" (IARC Mission 10)
-              </h2>
-              <p
-                class="mb-6 flex-1 leading-relaxed text-slate-600"
-                data-i18n="proj.iarc.desc"
-              >
-                Rój czterech autonomicznych dronów 5-calowych zbudowany na
-                międzynarodowe zawody International Aerial Robotics Competition
-                (IARC) w USA. Każdy dron posiada komputer pokładowy Raspberry Pi
-                CM5, kamerę global shutter FRAMOS IMX900 oraz algorytmy wizyjne
-                do autonomicznego przeszukiwania terenu korytarzami, koordynacji
-                roju i detekcji obiektów (replik min PFM-1 oraz znaczników
-                AprilTag).
-              </p>
-              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="rounded-md bg-slate-100 px-3 py-1">4× Quadcopter 5"</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">FRAMOS IMX900 Global Shutter</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">ROS 2 / Koordynacja Roju</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">IARC USA</span>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="grid grid-cols-2 gap-1 bg-slate-100 lg:order-2">
+                <img
+                  src="images/projects/iarc-swarm.jpg"
+                  alt="Dron z roju IARC 5 cali z komputerem CM5 i anteną LoRa"
+                  class="zoomable h-72 w-full object-cover lg:h-full"
+                />
+                <img
+                  src="images/projects/iarc-lot.jpg"
+                  alt="Autonomiczny lot drona 5 cali podczas zawodów IARC w USA"
+                  class="zoomable h-72 w-full object-cover lg:h-full"
+                />
+              </div>
+              <div class="flex flex-col justify-center p-8 lg:order-1 lg:p-10">
+                <span
+                  class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
+                  data-i18n="proj.iarc.tag"
+                  >RÓJ AUTONOMICZNY · IARC USA 2025 & 2026</span
+                >
+                <h2
+                  class="mb-3 text-2xl font-bold text-slate-900"
+                  data-i18n="proj.iarc.title"
+                >
+                  Rój Dronów 5": Autonomiczne Wykrywanie Min PFM-1
+                </h2>
+                <p
+                  class="mb-6 leading-relaxed text-slate-600"
+                  data-i18n="proj.iarc.desc"
+                >
+                  Cztery autonomiczne drony 5-calowe współpracujące przy
+                  wykrywaniu replik min PFM-1 podczas zawodów International
+                  Aerial Robotics Competition (IARC) w USA. Każdy dron wykonuje
+                  obliczenia na pokładzie (Raspberry Pi CM5 + kamera z migawką
+                  globalną, YOLO i AprilTag), komunikuje się w roju własnym
+                  protokołem LoRa (pozycje, znaleziska, zadania), omija
+                  przeszkody i współtworzy mapę terenu sterowaną z telefonu
+                  operatora.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                  <span class="rounded-md bg-slate-100 px-3 py-1">4× Quadcopter 5"</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Kamery Global Shutter</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Własny protokół LoRa</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">YOLO & AprilTag na CM5</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Sterowanie misją z telefonu</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- 3. Dron Jezdno-Lotny Czołg -->
+          <!-- 3. Autorska elektronika pokładowa CM5 Drone Board -->
           <article
-            data-category="uav hw"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
           >
-            <div class="h-72 w-full overflow-hidden bg-slate-100">
+            <div class="grid h-72 grid-cols-2 gap-1 overflow-hidden bg-slate-100">
               <img
-                src="images/projects/dron-czolg.jpg"
-                alt="Hybrydowy Dron Jezdno-Lotny Czołg"
-                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                src="images/projects/cm5-pcb-full.jpg"
+                alt="Płytka nośna CM5 Drone Board widok z góry"
+                class="zoomable h-full w-full object-cover"
               />
-            </div>
-            <div class="flex flex-1 flex-col p-8">
-              <span
-                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-red"
-                data-i18n="proj.tank.tag"
-                >Hybryda UAV/UGV · Grant Rektora</span
-              >
-              <h2
-                class="mb-3 text-2xl font-bold text-slate-900"
-                data-i18n="proj.tank.title"
-              >
-                Dron Jezdno-Lotny „Czołg” (Platforma Lądowo-Powietrzna)
-              </h2>
-              <p
-                class="mb-6 flex-1 leading-relaxed text-slate-600"
-                data-i18n="proj.tank.desc"
-              >
-                Bezzałogowy system o zmiennej konfiguracji przeznaczony do
-                wsparcia misji ratowniczych w trudno dostępnym terenie. Autorski
-                mechanizm transformacji z przekładnią redukcyjną umożliwia
-                płynne przełączanie pomiędzy trybem lotnym (quadcopter) a trybem
-                naziemnym wykorzystującym napęd gąsienicowy współosiowo
-                zintegrowany z modułami silników.
-              </p>
-              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="rounded-md bg-slate-100 px-3 py-1">Transformacja UAV ↔ UGV</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Napęd gąsienicowy + 4 wirniki</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Druk 3D & Kompozyty węglowe</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. CM5IO Drone Board PCB -->
-          <article
-            data-category="hw ai"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
-          >
-            <div class="h-72 w-full overflow-hidden bg-slate-100">
               <img
                 src="images/projects/cm5-pcb.jpg"
-                alt="Autorska płytka PCB CM5IO Drone Board AGH Drone Engineering"
-                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                alt="Zbliżenie na płytkę CM5IO Drone Board rev 1.0"
+                class="zoomable h-full w-full object-cover"
               />
             </div>
             <div class="flex flex-1 flex-col p-8">
               <span
                 class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
                 data-i18n="proj.pcb.tag"
-                >Elektronika Pokładowa · Autorskie PCB</span
+                >AUTORSKA ELEKTRONIKA POKŁADOWA · REV. 1.0 (01.2026)</span
               >
               <h2
                 class="mb-3 text-2xl font-bold text-slate-900"
                 data-i18n="proj.pcb.title"
               >
-                Komputer Misji CM5IO Drone Board + ESP32-S3 / LoRa
+                CM5 Drone Board – Płytka Nośna pod Raspberry Pi CM5
               </h2>
               <p
                 class="mb-6 flex-1 leading-relaxed text-slate-600"
                 data-i18n="proj.pcb.desc"
               >
-                Zaprojektowana w kole autorska płytka nośna pod komputer
-                Raspberry Pi Compute Module 5 (CM5) wraz z modułem rozszerzeń
-                wyposażonym w mikrokontroler ESP32-S3, transceiver dalekiego
-                zasięgu LoRa SX1262, zintegrowaną przetwornicę zasilania (do 40
-                V) oraz sprzętowy układ bezpieczeństwa (killswitch) kontrolera
-                lotu. Łączna masa obu płytek wynosi poniżej 57 g.
+                Zaprojektowana w pełni w kole dedykowana płytka nośna pod
+                komputer pokładowy Raspberry Pi Compute Module 5. Wyposażona w
+                wysokowydajną przetwornicę AP64501 (5 V, do 5 A), bezpośrednie
+                zasilanie z akumulatora drona do 40 V, interfejsy szybkiej
+                komunikacji PCIe 2.0 x1 oraz USB 3.0, a także moduł rozszerzeń z
+                ESP32-S3, LoRa SX1262 i sprzętowym killswitchem.
               </p>
               <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="rounded-md bg-slate-100 px-3 py-1">Raspberry Pi CM5 Carrier</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">ESP32-S3 + LoRa SX1262</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Hardware Killswitch · &lt; 57 g</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">AP64501: 5 V / 5 A</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Zasilanie do 40 V</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">PCIe 2.0 x1 & USB 3.0</span>
               </div>
             </div>
           </article>
 
-          <!-- 5. Projekt Salamandra -->
+          <!-- 4. Omnikopter: inspekcja łopat turbin -->
           <article
-            data-category="hw"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
           >
-            <div class="h-72 w-full overflow-hidden bg-slate-100">
-              <img
-                src="images/projects/salamandra.jpg"
-                alt="Projekt Salamandra - hamownia pod mikrosilniki odrzutowe"
-                class="h-full w-full object-cover transition duration-500 hover:scale-105"
-              />
-            </div>
-            <div class="flex flex-1 flex-col p-8">
-              <span
-                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-red"
-                data-i18n="proj.jet.tag"
-                >Napędy Odrzutowe · Grant Ministerialny</span
-              >
-              <h2
-                class="mb-3 text-2xl font-bold text-slate-900"
-                data-i18n="proj.jet.title"
-              >
-                Projekt „Salamandra” – Hamownia i Napęd Odrzutowy
-              </h2>
-              <p
-                class="mb-6 flex-1 leading-relaxed text-slate-600"
-                data-i18n="proj.jet.desc"
-              >
-                Projekt badawczo-konstrukcyjny obejmujący opracowanie mobilnej
-                hamowni pomiarowej pod mikrosilniki odrzutowe z akwizycją ciągu,
-                temperatur spalin (EGT) i parametrów paliwowych w czasie
-                rzeczywistym, stanowiącej bazę do rozwoju szybkich platform
-                bezzałogowych z napędem odrzutowym.
-              </p>
-              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="rounded-md bg-slate-100 px-3 py-1">Mikrosilnik odrzutowy</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Telemetria EGT & Ciągu</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Stanowisko pomiarowe</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 6. Omnicopter & BSP na uwięzi -->
-          <article
-            data-category="uav"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
-          >
-            <div class="h-72 w-full overflow-hidden bg-slate-100">
+            <div class="grid h-72 grid-cols-2 gap-1 overflow-hidden bg-slate-100">
               <img
                 src="images/projects/omnicopter-uav.jpg"
-                alt="Platforma wielowirnikowa AGH Drone Engineering"
-                class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                alt="Prototyp Omnikoptera w pracowni"
+                class="zoomable h-full w-full object-cover"
+              />
+              <img
+                src="images/projects/omnicopter-field.jpg"
+                alt="Testy Omnikoptera w terenie"
+                class="zoomable h-full w-full object-cover"
               />
             </div>
             <div class="flex flex-1 flex-col p-8">
               <span
                 class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
                 data-i18n="proj.omni.tag"
-                >Badania i Inspekcja · Grant IDUB & Grant Rektora</span
+                >INSPEKCJA TURBIN WIATROWYCH · 6DoF & TUNEL AERODYNAMICZNY</span
               >
               <h2
                 class="mb-3 text-2xl font-bold text-slate-900"
                 data-i18n="proj.omni.title"
               >
-                Omnicopter 6DoF & BSP na Uwięzi
+                Omnikopter: Monitoring Wizyjny Łopat Turbin podczas Pracy
               </h2>
               <p
                 class="mb-6 flex-1 leading-relaxed text-slate-600"
                 data-i18n="proj.omni.desc"
               >
-                Dwa specjalistyczne projekty inspekcyjno-obserwacyjne:
-                wielowirnikowiec typu Omnicopter zdolny do generowania wektora
-                ciągu w dowolnym kierunku (6 stopni swobody) do precyzyjnych
-                inspekcji turbin wiatrowych, oraz Bezzałogowy Statek Powietrzny
-                na uwięzi zasilany przewodowo z ziemi do długotrwałego zawisu i
-                retransmisji łączności.
+                Platforma wielowirnikowa sterująca pozycją i orientacją
+                niezależnie od siebie (kaskada regulatorów z modelem wiatru).
+                Omnikopter leci w ustalonej orientacji z kamerą stale skierowaną
+                na łopatę turbiny i koryguje podmuchy bez przechylania się,
+                wykrywając erozję krawędzi natarcia, mikropęknięcia i
+                delaminację. Projekt obejmuje symulacje Matlab/Simulink,
+                PX4/Gazebo i CFD, stanowisko badań napędów, testy w tunelu
+                aerodynamicznym oraz 4 artykuły naukowe i 5 konferencji.
               </p>
               <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="rounded-md bg-slate-100 px-3 py-1">Omnicopter 6DoF</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Inspekcja turbin wiatrowych</span>
-                <span class="rounded-md bg-slate-100 px-3 py-1">Tethered Power Supply</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Niezależna pozycja i orientacja 6DoF</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Matlab/Simulink & PX4/Gazebo</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">4 publikacje · 5 konferencji</span>
               </div>
             </div>
           </article>
 
-          <!-- 7. Akademia BSP / TurboGRANT ORLEN -->
+          <!-- 5. Salamandra & Stanowisko Silników Odrzutowych GTM160 -->
           <article
-            data-category="edu hw"
-            class="project-card flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md md:col-span-2"
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+          >
+            <div class="h-72 w-full overflow-hidden bg-slate-100">
+              <img
+                src="images/projects/salamandra.jpg"
+                alt="Projekt Salamandra - hamownia do mikrosilnika odrzutowego"
+                class="zoomable h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-8">
+              <span
+                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-red"
+                data-i18n="proj.jet.tag"
+                >NAPĘD ODRZUTOWY · GRANT MNiSW (62 186 ZŁ) & STANOWISKO GTM160</span
+              >
+              <h2
+                class="mb-3 text-2xl font-bold text-slate-900"
+                data-i18n="proj.jet.title"
+              >
+                Projekt „Salamandra” & Stanowisko Silników Odrzutowych GTM160
+              </h2>
+              <p
+                class="mb-6 flex-1 leading-relaxed text-slate-600"
+                data-i18n="proj.jet.desc"
+              >
+                Budowa mobilnej hamowni do mikrosilników odrzutowych z pomiarem
+                temperatur T2, T3 i EGT pod modularny płatowiec odrzutowy oraz
+                badania na stanowisku dwóch silników GTM160 (LAB w pełni
+                opomiarowany oraz GLASS w obudowie ze szkła borokrzemowego):
+                ciąg maksymalny 160 N, 117 000 obr./min wirnika, temperatura
+                gazów wylotowych 750°C, moduł ESDL JETPOL i analiza telemetrii w
+                czasie rzeczywistym przez WiFi/USB.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                <span class="rounded-md bg-slate-100 px-3 py-1">160 N ciągu · 117 000 RPM</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Pomiar T2, T3 i EGT (750°C)</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">GTM160 LAB & GLASS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. TSO: The Small One -->
+          <article
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+          >
+            <div class="h-72 w-full overflow-hidden bg-slate-100">
+              <img
+                src="images/projects/tso-manned.jpg"
+                alt="TSO: The Small One - dron załogowy"
+                class="zoomable h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-8">
+              <span
+                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
+                data-i18n="proj.tso.tag"
+                >DRON ZAŁOGOWY · MISJE ZDALNE I AUTONOMICZNE</span
+              >
+              <h2
+                class="mb-3 text-2xl font-bold text-slate-900"
+                data-i18n="proj.tso.title"
+              >
+                TSO: The Small One – Załogowa Platforma Wielowirnikowa
+              </h2>
+              <p
+                class="mb-6 flex-1 leading-relaxed text-slate-600"
+                data-i18n="proj.tso.desc"
+              >
+                Wielkogabarytowy dron załogowy z napędem elektrycznym
+                przeznaczony do misji zdalnych i autonomicznych. Charakteryzuje
+                się udźwigiem do 100 kg, czasem pracy do 1 godziny oraz
+                nowatorskimi manetkami sterującymi. Przeznaczony do transportu
+                ciężkich ładunków w rejony niebezpieczne oraz ewakuacji i
+                transportu personelu w trudno dostępne miejsca.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                <span class="rounded-md bg-slate-100 px-3 py-1">Udźwig do 100 kg</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Czas pracy do 1 h</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Nowatorskie manetki</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Skrzydło VTOL -->
+          <article
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+          >
+            <div class="h-72 w-full overflow-hidden bg-slate-100">
+              <img
+                src="images/projects/vtol-wing.jpg"
+                alt="Skrzydło VTOL - płatowiec z pionowym startem"
+                class="zoomable h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-8">
+              <span
+                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
+                data-i18n="proj.vtol.tag"
+                >PŁATOWIEC Z PIONOWYM STARTEM · DETEKCJA AI</span
+              >
+              <h2
+                class="mb-3 text-2xl font-bold text-slate-900"
+                data-i18n="proj.vtol.title"
+              >
+                Skrzydło VTOL – Laminowany Płatowiec Rozpoznawczy
+              </h2>
+              <p
+                class="mb-6 flex-1 leading-relaxed text-slate-600"
+                data-i18n="proj.vtol.desc"
+              >
+                Płatowiec z pionowym startem i lądowaniem (VTOL) zaprojektowany
+                i zalaminowany w pełni w Kole. Wyposażony w pokładową jednostkę
+                obliczeniową realizującą detekcję dowolnych klas obiektów z
+                kamer RGB w czasie rzeczywistym. Przeznaczony do patrolowania
+                granic i rozległego terenu, misji rozpoznawczych oraz
+                lokalizacji i neutralizowania innych UAV.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                <span class="rounded-md bg-slate-100 px-3 py-1">Pionowy start VTOL</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Detekcja obiektów RGB AI</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Patrolowanie & Rozpoznanie</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. AI Racer -->
+          <article
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+          >
+            <div class="h-72 w-full overflow-hidden bg-slate-100">
+              <img
+                src="images/projects/ai-racer.jpg"
+                alt="AI Racer - autonomiczny lot między bramkami"
+                class="zoomable h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-8">
+              <span
+                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
+                data-i18n="proj.racer.tag"
+                >NAWIGACJA BEZ GPS · OPTICAL FLOW & SIECI NEURONOWE</span
+              >
+              <h2
+                class="mb-3 text-2xl font-bold text-slate-900"
+                data-i18n="proj.racer.title"
+              >
+                AI Racer – Autonomiczny Lot Między Przeszkodami
+              </h2>
+              <p
+                class="mb-6 flex-1 leading-relaxed text-slate-600"
+                data-i18n="proj.racer.desc"
+              >
+                System autonomicznej nawigacji drona wyścigowego określający
+                pozycję z użyciem Optical Flow oraz głębokich sieci neuronowych
+                (przetwarzanie na pokładzie lub w chmurze). Umożliwia szybki lot
+                między bramkami i przeszkodami w zamkniętych pomieszczeniach,
+                patrolowanie terenu bez zasięgu radiowego oraz misje zwiadowcze
+                w strefach pozbawionych sygnału GPS.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                <span class="rounded-md bg-slate-100 px-3 py-1">Optical Flow & Neural Nets</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Nawigacja Indoor / Non-GPS</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Przetwarzanie Edge / Cloud</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Dron wodny -->
+          <article
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md"
+          >
+            <div class="h-72 w-full overflow-hidden bg-slate-100">
+              <img
+                src="images/projects/water-drone.jpg"
+                alt="Dron wodny - katamaran pomiarowy"
+                class="zoomable h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-8">
+              <span
+                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
+                data-i18n="proj.water.tag"
+                >JEDNOSTKA NAWODNA USV · MONITORING ŚRODOWISKOWY</span
+              >
+              <h2
+                class="mb-3 text-2xl font-bold text-slate-900"
+                data-i18n="proj.water.title"
+              >
+                Dron Wodny: Monitorowanie Jakości Wody i Mapowanie Głębokości
+              </h2>
+              <p
+                class="mb-6 flex-1 leading-relaxed text-slate-600"
+                data-i18n="proj.water.desc"
+              >
+                Bezzałogowy katamaran pomiarowy do badania jakości wody w
+                jeziorach, stawach i rzekach oraz mapowania batymetrycznego
+                (0–10 m). Wykorzystuje termistor, elektrody szklane i platynowe,
+                rozpraszanie światła oraz fluorescencję do precyzyjnego pomiaru
+                temperatury (±0,1°C), pH (±0,1), przewodności (1–2000 μS/cm),
+                mętności (0–1000 NTU), tlenu rozpuszczonego (0–20 mg/L),
+                chlorofilu i sinic.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                <span class="rounded-md bg-slate-100 px-3 py-1">pH · EC · Mętność · Tlen</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Chlorofil & Sinice (Fluorescencja)</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Batymetria 0–10 m</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Dron Jezdno-Lotny Czołg -->
+          <article
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-red hover:shadow-md"
+          >
+            <div class="h-72 w-full overflow-hidden bg-slate-100">
+              <img
+                src="images/projects/dron-czolg.jpg"
+                alt="Hybrydowy Dron Jezdno-Lotny Czołg"
+                class="zoomable h-full w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+            <div class="flex flex-1 flex-col p-8">
+              <span
+                class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-red"
+                data-i18n="proj.tank.tag"
+                >HYBRYDA LĄDOWO-POWIETRZNA · GRANT REKTORA</span
+              >
+              <h2
+                class="mb-3 text-2xl font-bold text-slate-900"
+                data-i18n="proj.tank.title"
+              >
+                Dron Jezdno-Lotny „Czołg” (Transformacja UAV ↔ UGV)
+              </h2>
+              <p
+                class="mb-6 flex-1 leading-relaxed text-slate-600"
+                data-i18n="proj.tank.desc"
+              >
+                Bezzałogowa platforma o zmiennej konfiguracji do dostarczania
+                zasobów w trudnym terenie. Mechanizm transformacji z przekładnią
+                redukcyjną pozwala na zmianę trybu pracy między
+                czterowirnikowym dronem latającym a pojazdem gąsienicowym
+                pokonującym gruzowiska i obszary leśne.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                <span class="rounded-md bg-slate-100 px-3 py-1">Transformacja UAV ↔ UGV</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Współosiowe moduły gąsienic</span>
+                <span class="rounded-md bg-slate-100 px-3 py-1">Misje ratownicze</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. Nauka poza zawodami & Warsztaty (Full Width) -->
+          <article
+            class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:border-agh-green hover:shadow-md md:col-span-2"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2">
-              <div class="h-72 w-full overflow-hidden bg-slate-100 lg:h-full">
+              <div class="grid grid-cols-2 gap-1 bg-slate-100">
+                <img
+                  src="images/projects/conference-uae.jpg"
+                  alt="Prezentacja wyników badań na konferencji międzynarodowej"
+                  class="zoomable h-72 w-full object-cover lg:h-full"
+                />
                 <img
                   src="images/projects/akademia-bsp.jpg"
-                  alt="Warsztaty Akademia BSP i lutowanie PCB w laboratorium"
-                  class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                  alt="Warsztaty w pracowni elektronicznej AGH Drone Engineering"
+                  class="zoomable h-72 w-full object-cover lg:h-full"
                 />
               </div>
               <div class="flex flex-col justify-center p-8 lg:p-10">
                 <span
                   class="mb-2 inline-block text-xs font-bold uppercase tracking-wider text-agh-green"
                   data-i18n="proj.edu.tag"
-                  >Szkolenia i Warsztaty · TurboGRANT ORLEN</span
+                  >KONFERENCJE · PUBLIKACJE · GRANTY · WARSZTATY</span
                 >
                 <h2
                   class="mb-3 text-2xl font-bold text-slate-900"
                   data-i18n="proj.edu.title"
                 >
-                  Akademia BSP & Kurs Projektowania PCB
+                  Nauka poza Zawodami & Warsztaty Elektroniki i Dronów
                 </h2>
                 <p
                   class="mb-6 leading-relaxed text-slate-600"
                   data-i18n="proj.edu.desc"
                 >
-                  Cykl otwartych warsztatów inżynierskich realizowany przy
-                  wsparciu Fundacji ORLEN im. I. Łukasiewicza. Prowadzimy
-                  praktyczne szkolenia z elektroniki i lutowania, programowania
-                  mikrokontrolerów (STM32/ESP32), projektowania własnych płytek
-                  PCB w KiCadzie, modelowania CAD/druku 3D oraz konfiguracji
-                  ArduPilota i komunikacji MAVLink.
+                  Prezentujemy wyniki badań na międzynarodowych konferencjach
+                  (m.in. w ZEA, SGEM Vienna, SICE FES, sesjach Barbórkowej i
+                  Hutniczej), publikujemy artykuły naukowe (systemy zrzutu, SLAM
+                  satelitarny), realizujemy granty badawcze (MNiSW 238 tys. zł,
+                  Salamandra 62 tys. zł, ORLEN Turbogrant 50 tys. zł, IDUB,
+                  Granty Rektora) oraz prowadzimy warsztaty lutowania,
+                  projektowania PCB, druku 3D i budowy dronów.
                 </p>
                 <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                  <span class="rounded-md bg-slate-100 px-3 py-1">KiCad & Lutowanie SMD</span>
-                  <span class="rounded-md bg-slate-100 px-3 py-1">STM32 & ESP32</span>
-                  <span class="rounded-md bg-slate-100 px-3 py-1">CAD / Druk 3D</span>
-                  <span class="rounded-md bg-slate-100 px-3 py-1">ArduPilot & MAVLink</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">MNiSW 238 tys. zł</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">Salamandra 62 tys. zł</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">ORLEN Turbogrant 50 tys. zł</span>
+                  <span class="rounded-md bg-slate-100 px-3 py-1">SGEM Vienna · ZEA · SICE FES</span>
                 </div>
               </div>
             </div>
@@ -500,6 +698,31 @@
         </div>
       </section>
     </main>
+
+    <!-- Lightbox Modal -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/90 p-4 backdrop-blur-sm"
+    >
+      <button
+        id="lightbox-close"
+        class="absolute right-6 top-6 rounded-full bg-white/10 p-2.5 text-white transition hover:bg-white/20"
+        aria-label="Zamknij podgląd"
+      >
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="flex max-h-[90vh] max-w-5xl flex-col items-center">
+        <img
+          id="lightbox-img"
+          src=""
+          alt=""
+          class="max-h-[82vh] w-auto rounded-xl object-contain shadow-2xl"
+        />
+        <p id="lightbox-caption" class="mt-3 text-center text-sm font-medium text-slate-200"></p>
+      </div>
+    </div>
 
     <footer
       class="relative z-10 border-t border-slate-200 bg-white px-4 pb-10 pt-16"
@@ -523,7 +746,7 @@
           </p>
           <p class="mt-1 text-sm text-slate-500">
             <span data-i18n="footer.faculty"
-              >Koło Naukowe AGH UST w Krakowie.</span
+              >Studenckie Koło Naukowe AGH UST w Krakowie.</span
             >
           </p>
         </div>
@@ -533,8 +756,15 @@
           </h3>
           <a
             href="mailto:drone@agh.edu.pl"
-            class="text-lg font-medium text-agh-green transition duration-200 hover:underline"
+            class="block text-lg font-medium text-agh-green transition duration-200 hover:underline"
             >drone@agh.edu.pl</a
+          >
+          <a
+            href="https://aghdrone.pages.dev/"
+            target="_blank"
+            class="mt-2 inline-block text-sm font-semibold text-slate-600 hover:text-agh-green hover:underline"
+            data-i18n="footer.wiki"
+            >Baza wiedzy dla członków koła →</a
           >
         </div>
         <div class="mx-auto flex space-x-6 justify-self-end md:mx-0">
@@ -543,12 +773,7 @@
             target="_blank"
             class="text-slate-500 transition duration-200 hover:text-slate-900"
             aria-label="GitHub"
-            ><svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            ><svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -563,12 +788,7 @@
             class="text-slate-500 transition duration-200 hover:text-agh-green"
             aria-label="LinkedIn"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
@@ -583,12 +803,7 @@
             class="text-slate-500 transition duration-200 hover:text-blue-600"
             aria-label="Facebook"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
@@ -603,12 +818,7 @@
             class="text-slate-500 transition duration-200 hover:text-agh-red"
             aria-label="Instagram"
           >
-            <svg
-              class="h-7 w-7"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
+            <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill-rule="evenodd"
                 d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.451 2.535c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
@@ -639,25 +849,31 @@
     <script src="i18n.js" defer></script>
     <script src="mobile.js" defer></script>
     <script>
-      document.querySelectorAll(".project-tab").forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const filter = tab.getAttribute("data-filter");
-          document.querySelectorAll(".project-tab").forEach((t) => {
-            t.className =
-              "project-tab rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-agh-green hover:text-agh-green";
-          });
-          tab.className =
-            "project-tab rounded-lg bg-agh-green px-5 py-2.5 text-sm font-semibold text-white transition";
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lightbox-img");
+      const lbCap = document.getElementById("lightbox-caption");
+      const lbClose = document.getElementById("lightbox-close");
 
-          document.querySelectorAll(".project-card").forEach((card) => {
-            const cats = (card.getAttribute("data-category") || "").split(" ");
-            if (filter === "all" || cats.includes(filter)) {
-              card.classList.remove("hidden");
-            } else {
-              card.classList.add("hidden");
-            }
-          });
+      document.querySelectorAll(".zoomable").forEach((img) => {
+        img.addEventListener("click", () => {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          lbCap.textContent = img.alt;
+          lb.classList.remove("hidden");
+          lb.classList.add("flex");
         });
+      });
+
+      function closeLb() {
+        lb.classList.add("hidden");
+        lb.classList.remove("flex");
+      }
+      lbClose.addEventListener("click", closeLb);
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLb();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLb();
       });
     </script>
   </body>

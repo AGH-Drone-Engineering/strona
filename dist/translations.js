@@ -1,9 +1,10 @@
 const translations = {
   pl: {
     // Meta / Title
-    "meta.description.index": "AGH Drone Engineering - Koło Naukowe AGH UST",
+    "meta.description.index":
+      "AGH Drone Engineering - Studenckie Koło Naukowe AGH UST. Budujemy drony automatyczne: autonomia z kontrolą operatora.",
     "meta.description.about": "O nas - AGH Drone Engineering",
-    "meta.description.projects": "Nasze Projekty - AGH Drone Engineering",
+    "meta.description.projects": "Projekty i Konstrukcje - AGH Drone Engineering",
     "title.index": "AGH Drone Engineering",
     "title.about": "O nas - AGH Drone Engineering",
     "title.projects": "Projekty - AGH Drone Engineering",
@@ -12,98 +13,139 @@ const translations = {
     "nav.home": "Strona główna",
     "nav.projects": "Projekty",
     "nav.about": "O nas",
+    "nav.wiki": "Baza wiedzy (Dla członków)",
     "nav.join": "Kontakt",
 
     // Hero
+    "hero.badge": "STUDENCKIE KOŁO NAUKOWE AGH UST",
     "hero.title.1": "AGH Drone",
     "hero.title.2": "Engineering",
     "hero.subtitle":
-      "Koło naukowe AGH UST zajmujące się projektowaniem, budową i programowaniem autonomicznych bezzałogowych statków powietrznych oraz robotów mobilnych.",
-    "hero.cta": "Nasze projekty",
+      "Budujemy drony automatyczne: autonomia z kontrolą operatora. Realizujemy projekty badawcze i startujemy w zawodach robotyki powietrznej na całym świecie.",
+    "hero.cta": "Zobacz nasze projekty",
     "hero.vcard": "Dodaj do kontaktów",
+
+    // Stats bar
+    "stats.grants.label": "Pozyskanych grantów (MNiSW, IDUB, ORLEN)",
+    "stats.awards.label": "Nagrody na zawodach w Polsce i na świecie",
+    "stats.payload.label": "Udźwigu drona załogowego TSO",
+    "stats.rpm.label": "Obr./min na stanowisku odrzutowym GTM160",
 
     // Sectors
     "sectors.heading": "Nasza Działalność",
-    "sectors.autonomy.title": "Autonomia i AI",
+    "sectors.autonomy.title": "Autonomia i Roje Dronów",
     "sectors.autonomy.desc":
-      "Algorytmy nawigacji, wizja komputerowa (YOLO, OpenCV), ROS 2 oraz autonomiczne misje i roje dronów.",
-    "sectors.hardware.title": "Konstrukcje i Elektronika",
+      "Rozpoznawanie obrazu (YOLO, AprilTag, Optical Flow), obliczenia na pokładzie (Raspberry Pi CM5), komunikacja LoRa w roju oraz kooperacja wielu jednostek.",
+    "sectors.hardware.title": "Konstrukcje i Własne PCB",
     "sectors.hardware.desc":
-      "Projektowanie i budowa wielowirnikowców, hybryd lądowo-powietrznych, dedykowanych płytek PCB oraz systemów embedded.",
-    "sectors.contests.title": "Zawody Międzynarodowe",
-    "sectors.contests.desc":
-      "Reprezentujemy AGH na zawodach w Polsce i na świecie – m.in. Droniada GZM, IMAV (Strasburg), IARC (USA), Dual-Tech AGH i Robocomp.",
+      "Od oktokopterów X8, omnikopterów 6DoF, skrzydeł VTOL i dronów wodnych po autorską płytkę CM5 Drone Board oraz stanowisko silników odrzutowych.",
+    "sectors.science.title": "Nauka, Granty i Warsztaty",
+    "sectors.science.desc":
+      "Badania w tunelach aerodynamicznych, publikacje naukowe, konferencje międzynarodowe (m.in. SGEM Vienna, ZEA) oraz warsztaty dla studentów.",
 
     // Featured projects on index
-    "home.projects.heading": "Wybrane Projekty",
+    "home.projects.heading": "Nasze Konstrukcje i Projekty",
     "home.projects.subheading":
-      "Poznaj konstrukcje, elektronikę i systemy autonomiczne budowane w naszym kole.",
-    "home.projects.all": "Zobacz wszystkie projekty",
+      "Od ciężkich oktokopterów X8 i autonomicznych rojów 5\" po napęd odrzutowy, omnikoptery i drony załogowe.",
+    "home.projects.all": "Zobacz wszystkie projekty i specyfikacje",
+
+    // Timeline / Awards
+    "timeline.heading": "Zawody i Wyniki (2018–2026)",
+    "timeline.subheading":
+      "Regularnie stajemy na podium krajowych i międzynarodowych zawodów bezzałogowych oraz konferencji naukowych.",
+
+    // Member zone banner
+    "members.badge": "STREFA CZŁONKA KOŁA",
+    "members.title": "Baza wiedzy i zadania AGH Drone Engineering",
+    "members.desc":
+      "Należysz do koła? W wewnętrznej bazie wiedzy znajdziesz instrukcje budowy drona krok po kroku (ArduPilot, MAVLink, ROS 2, Wizja, PCB, Mechanika) oraz panel ze swoimi taskami z GitHuba.",
+    "members.cta": "Przejdź do Bazy Wiedzy (aghdrone.pages.dev)",
 
     // Projects page
     "projects.hero.title.1": "Nasze",
     "projects.hero.title.2": "Projekty i Konstrukcje",
     "projects.hero.subtitle":
-      "Od autonomicznych rojów dronów 5-calowych i ciężkich oktokopterów koaksjalnych X8, przez hybrydy jezdno-lotne i autorskie płytki PCB, aż po napęd odrzutowy.",
-    "projects.tab.all": "Wszystkie",
-    "projects.tab.uav": "Platformy BSP",
-    "projects.tab.ai": "Autonomia i Roje",
-    "projects.tab.hw": "Elektronika i Napędy",
-    "projects.tab.edu": "Szkolenia",
+      "Przegląd platform latających, nawodnych, lądowo-powietrznych, autorskiej elektroniki pokładowej oraz stanowisk badawczych rozwijanych w AGH Drone Engineering.",
+    "projects.click.hint": "Kliknij na dowolne zdjęcie, aby otworzyć podgląd w pełnym rozmiarze.",
 
     // Project 1: Octa X8
-    "proj.octa.tag": "Platformy BSP · Grant Rektora 2026",
-    "proj.octa.title": "Oktokoptery koaksjalne X8: „Woda i Ogień” & „HydroLab”",
+    "proj.octa.tag": "PLATFORMA BAZOWA X8 · WYMIENNE MODUŁY",
+    "proj.octa.title": "Octocopter X8: „Woda i Ogień”, „HydroLab” i Moduł Audio",
     "proj.octa.desc":
-      "Bliźniacze ciężkie platformy wielowirnikowe w układzie koaksjalnym X8 (8 silników T-Motor MN4006, śmigła 15\", MTOM 4,9 kg, czas lotu do 35 min, Cube Orange+ z ArduPilotem i Raspberry Pi CM5). Wariant „Woda i Ogień” (Octa1) realizuje detekcję wizyjną YOLO, lokalizację źródła dźwięku i zrzut ładunku ratowniczego (II miejsce na Droniadzie GZM 2026). Wariant „HydroLab” (Octa2) to mobilne laboratorium do badania jakości wody in situ (pH, EC, temperatura) przez most radiowy ESP-NOW.",
+      "Ciężka platforma wielowirnikowa w układzie koncentrycznym X8 z autopilotem Cube Orange (ArduPilot) oraz komputerem pokładowym Raspberry Pi CM5. Jedna baza lotna współpracuje z wymiennymi modułami zadaniowymi: kierunkowymi mikrofonami w osiach X/Y wskazującymi źródło dźwięku, modułem wizyjnym AI (YOLO na CM5), mobilnym laboratorium HydroLab (pomiar pH, przewodności i temperatury wody) oraz kartą sieciową dalekiego zasięgu.",
 
     // Project 2: IARC Swarm
-    "proj.iarc.tag": "Autonomia i Roje · MNiSW FERS N215",
-    "proj.iarc.title": "Rój Autonomicznych Dronów 5\" (IARC Mission 10)",
+    "proj.iarc.tag": "RÓJ AUTONOMICZNY · IARC USA 2025 & 2026",
+    "proj.iarc.title": "Rój Dronów 5\": Autonomiczne Wykrywanie Min PFM-1",
     "proj.iarc.desc":
-      "Rój czterech autonomicznych dronów 5-calowych zbudowany na międzynarodowe zawody International Aerial Robotics Competition (IARC) w USA. Każdy dron posiada komputer pokładowy Raspberry Pi CM5, kamerę global shutter FRAMOS IMX900 oraz algorytmy wizyjne do autonomicznego przeszukiwania terenu korytarzami, koordynacji roju i detekcji obiektów (replik min PFM-1 oraz znaczników AprilTag).",
+      "Cztery autonomiczne drony 5-calowe współpracujące przy wykrywaniu replik min PFM-1 podczas zawodów International Aerial Robotics Competition (IARC) w USA. Każdy dron wykonuje obliczenia na pokładzie (Raspberry Pi CM5 + kamera z migawką globalną, YOLO i AprilTag), komunikuje się w roju własnym protokołem LoRa (pozycje, znaleziska, zadania), omija przeszkody i współtworzy mapę terenu sterowaną z telefonu operatora.",
 
-    // Project 3: Dron-Czołg
-    "proj.tank.tag": "Hybryda UAV/UGV · Grant Rektora",
-    "proj.tank.title": "Dron Jezdno-Lotny „Czołg” (Platforma Lądowo-Powietrzna)",
-    "proj.tank.desc":
-      "Bezzałogowy system o zmiennej konfiguracji przeznaczony do wsparcia misji ratowniczych w trudno dostępnym terenie. Autorski mechanizm transformacji z przekładnią redukcyjną umożliwia płynne przełączanie pomiędzy trybem lotnym (quadcopter) a trybem naziemnym wykorzystującym napęd gąsienicowy współosiowo zintegrowany z modułami silników.",
-
-    // Project 4: CM5IO PCB
-    "proj.pcb.tag": "Elektronika Pokładowa · Autorskie PCB",
-    "proj.pcb.title": "Komputer Misji CM5IO Drone Board + ESP32-S3 / LoRa",
+    // Project 3: CM5IO PCB
+    "proj.pcb.tag": "AUTORSKA ELEKTRONIKA POKŁADOWA · REV. 1.0 (01.2026)",
+    "proj.pcb.title": "CM5 Drone Board – Płytka Nośna pod Raspberry Pi CM5",
     "proj.pcb.desc":
-      "Zaprojektowana w kole autorska płytka nośna pod komputer Raspberry Pi Compute Module 5 (CM5) wraz z modułem rozszerzeń wyposażonym w mikrokontroler ESP32-S3, transceiver dalekiego zasięgu LoRa SX1262, zintegrowaną przetwornicę zasilania (do 40 V) oraz sprzętowy układ bezpieczeństwa (killswitch) kontrolera lotu. Łączna masa obu płytek wynosi poniżej 57 g.",
+      "Zaprojektowana w pełni w kole dedykowana płytka nośna pod komputer pokładowy Raspberry Pi Compute Module 5. Wyposażona w wysokowydajną przetwornicę AP64501 (5 V, do 5 A), bezpośrednie zasilanie z akumulatora drona do 40 V, interfejsy szybkiej komunikacji PCIe 2.0 x1 oraz USB 3.0, a także moduł rozszerzeń z ESP32-S3, LoRa SX1262 i sprzętowym killswitchem.",
 
-    // Project 5: Salamandra
-    "proj.jet.tag": "Napędy Odrzutowe · Grant Ministerialny",
-    "proj.jet.title": "Projekt „Salamandra” – Hamownia i Napęd Odrzutowy",
-    "proj.jet.desc":
-      "Projekt badawczo-konstrukcyjny obejmujący opracowanie mobilnej hamowni pomiarowej pod mikrosilniki odrzutowe z akwizycją ciągu, temperatur spalin (EGT) i parametrów paliwowych w czasie rzeczywistym, stanowiącej bazę do rozwoju szybkich platform bezzałogowych z napędem odrzutowym.",
-
-    // Project 6: Omnicopter & Tethered UAV
-    "proj.omni.tag": "Badania i Inspekcja · Grant IDUB & Grant Rektora",
-    "proj.omni.title": "Omnicopter 6DoF & BSP na Uwięzi",
+    // Project 4: Omnikopter
+    "proj.omni.tag": "INSPEKCJA TURBIN WIATROWYCH · 6DoF & TUNEL AERODYNAMICZNY",
+    "proj.omni.title": "Omnikopter: Monitoring Wizyjny Łopat Turbin podczas Pracy",
     "proj.omni.desc":
-      "Dwa specjalistyczne projekty inspekcyjno-obserwacyjne: wielowirnikowiec typu Omnicopter zdolny do generowania wektora ciągu w dowolnym kierunku (6 stopni swobody) do precyzyjnych inspekcji turbin wiatrowych, oraz Bezzałogowy Statek Powietrzny na uwięzi zasilany przewodowo z ziemi do długotrwałego zawisu i retransmisji łączności.",
+      "Platforma wielowirnikowa sterująca pozycją i orientacją niezależnie od siebie (kaskada regulatorów z modelem wiatru). Omnikopter leci w ustalonej orientacji z kamerą stale skierowaną na łopatę turbiny i koryguje podmuchy bez przechylania się, wykrywając erozję krawędzi natarcia, mikropęknięcia i delaminację. Projekt obejmuje symulacje Matlab/Simulink, PX4/Gazebo i CFD, stanowisko badań napędów, testy w tunelu aerodynamicznym oraz 4 artykuły naukowe i 5 konferencji.",
 
-    // Project 7: Akademia BSP / TurboGRANT
-    "proj.edu.tag": "Szkolenia i Warsztaty · TurboGRANT ORLEN",
-    "proj.edu.title": "Akademia BSP & Kurs Projektowania PCB",
+    // Project 5: Salamandra & GTM160
+    "proj.jet.tag": "NAPĘD ODRZUTOWY · GRANT MNiSW (62 186 ZŁ) & STANOWISKO GTM160",
+    "proj.jet.title": "Projekt „Salamandra” & Stanowisko Silników Odrzutowych GTM160",
+    "proj.jet.desc":
+      "Budowa mobilnej hamowni do mikrosilników odrzutowych z pomiarem temperatur T2, T3 i EGT pod modularny płatowiec odrzutowy oraz badania na stanowisku dwóch silników GTM160 (LAB w pełni opomiarowany oraz GLASS w obudowie ze szkła borokrzemowego): ciąg maksymalny 160 N, 117 000 obr./min wirnika, temperatura gazów wylotowych 750°C, moduł ESDL JETPOL i analiza telemetrii w czasie rzeczywistym przez WiFi/USB.",
+
+    // Project 6: TSO The Small One
+    "proj.tso.tag": "DRON ZAŁOGOWY · MISJE ZDALNE I AUTONOMICZNE",
+    "proj.tso.title": "TSO: The Small One – Załogowa Platforma Wielowirnikowa",
+    "proj.tso.desc":
+      "Wielkogabarytowy dron załogowy z napędem elektrycznym przeznaczony do misji zdalnych i autonomicznych. Charakteryzuje się udźwigiem do 100 kg, czasem pracy do 1 godziny oraz nowatorskimi manetkami sterującymi. Przeznaczony do transportu ciężkich ładunków w rejony niebezpieczne oraz ewakuacji i transportu personelu w trudno dostępne miejsca.",
+
+    // Project 7: Skrzydło VTOL
+    "proj.vtol.tag": "PŁATOWIEC Z PIONOWYM STARTEM · DETEKCJA AI",
+    "proj.vtol.title": "Skrzydło VTOL – Laminowany Płatowiec Rozpoznawczy",
+    "proj.vtol.desc":
+      "Płatowiec z pionowym startem i lądowaniem (VTOL) zaprojektowany i zalaminowany w pełni w Kole. Wyposażony w pokładową jednostkę obliczeniową realizującą detekcję dowolnych klas obiektów z kamer RGB w czasie rzeczywistym. Przeznaczony do patrolowania granic i rozległego terenu, misji rozpoznawczych oraz lokalizacji i neutralizowania innych UAV.",
+
+    // Project 8: AI Racer
+    "proj.racer.tag": "NAWIGACJA BEZ GPS · OPTICAL FLOW & SIECI NEURONOWE",
+    "proj.racer.title": "AI Racer – Autonomiczny Lot Między Przeszkodami",
+    "proj.racer.desc":
+      "System autonomicznej nawigacji drona wyścigowego określający pozycję z użyciem Optical Flow oraz głębokich sieci neuronowych (przetwarzanie na pokładzie lub w chmurze). Umożliwia szybki lot między bramkami i przeszkodami w zamkniętych pomieszczeniach, patrolowanie terenu bez zasięgu radiowego oraz misje zwiadowcze w strefach pozbawionych sygnału GPS.",
+
+    // Project 9: Dron wodny
+    "proj.water.tag": "JEDNOSTKA NAWODNA USV · MONITORING ŚRODOWISKOWY",
+    "proj.water.title": "Dron Wodny: Monitorowanie Jakości Wody i Mapowanie Głębokości",
+    "proj.water.desc":
+      "Bezzałogowy katamaran pomiarowy do badania jakości wody w jeziorach, stawach i rzekach oraz mapowania batymetrycznego (0–10 m). Wykorzystuje termistor, elektrody szklane i platynowe, rozpraszanie światła oraz fluorescencję do precyzyjnego pomiaru temperatury (±0,1°C), pH (±0,1), przewodności (1–2000 μS/cm), mętności (0–1000 NTU), tlenu rozpuszczonego (0–20 mg/L), chlorofilu i sinic.",
+
+    // Project 10: Dron-Czołg
+    "proj.tank.tag": "HYBRYDA LĄDOWO-POWIETRZNA · GRANT REKTORA",
+    "proj.tank.title": "Dron Jezdno-Lotny „Czołg” (Transformacja UAV ↔ UGV)",
+    "proj.tank.desc":
+      "Bezzałogowa platforma o zmiennej konfiguracji do dostarczania zasobów w trudnym terenie. Mechanizm transformacji z przekładnią redukcyjną pozwala na zmianę trybu pracy między czterowirnikowym dronem latającym a pojazdem gąsienicowym pokonującym gruzowiska i obszary leśne.",
+
+    // Project 11: Nauka poza zawodami & Warsztaty
+    "proj.edu.tag": "KONFERENCJE · PUBLIKACJE · GRANTY · WARSZTATY",
+    "proj.edu.title": "Nauka poza Zawodami & Warsztaty Elektroniki i Dronów",
     "proj.edu.desc":
-      "Cykl otwartych warsztatów inżynierskich realizowany przy wsparciu Fundacji ORLEN im. I. Łukasiewicza. Prowadzimy praktyczne szkolenia z elektroniki i lutowania, programowania mikrokontrolerów (STM32/ESP32), projektowania własnych płytek PCB w KiCadzie, modelowania CAD/druku 3D oraz konfiguracji ArduPilota i komunikacji MAVLink.",
+      "Prezentujemy wyniki badań na międzynarodowych konferencjach (m.in. w ZEA, SGEM Vienna, SICE FES, sesjach Barbórkowej i Hutniczej), publikujemy artykuły naukowe (systemy zrzutu, SLAM satelitarny), realizujemy granty badawcze (MNiSW 238 tys. zł, Salamandra 62 tys. zł, ORLEN Turbogrant 50 tys. zł, IDUB, Granty Rektora) oraz prowadzimy warsztaty lutowania, projektowania PCB, druku 3D i budowy dronów.",
 
     // Contact
-    "contact.title.1": "Chcesz latać i tworzyć",
-    "contact.title.2": "z nami?",
+    "contact.title.1": "Dołącz do",
+    "contact.title.2": "AGH Drone Engineering",
     "contact.subtitle":
-      "Szukamy pasjonatów robotyki, sztucznej inteligencji, elektroniki, mechaniki i awiacji. Skontaktuj się z nami lub śledź nasze media społecznościowe!",
+      "Elektronika, oprogramowanie, mechanika i loty testowe. Napisz do nas lub śledź nasze media społecznościowe!",
     "contact.cta": "Napisz do nas: drone@agh.edu.pl",
 
     // Footer
     "footer.expansion": "AGH Drone Engineering",
-    "footer.faculty": "Koło Naukowe AGH UST w Krakowie.",
+    "footer.faculty": "Studenckie Koło Naukowe AGH UST w Krakowie.",
     "footer.contact": "Kontakt",
+    "footer.wiki": "Baza wiedzy dla członków koła →",
     "footer.rights": "© 2026 AGH Drone Engineering. Wszelkie prawa zastrzeżone.",
 
     // About page
@@ -112,7 +154,7 @@ const translations = {
     "about.p1":
       "AGH Drone Engineering to studenckie koło naukowe zrzeszające osoby z pasją do bezzałogowych statków powietrznych, robotyki mobilnej, sztucznej inteligencji i elektroniki.",
     "about.p2":
-      "Budujemy autorskie platformy latające – od lekkich rojów dronów 5-calowych, przez ciężkie oktokoptery koaksjalne X8 i hybrydy jezdno-lotne, aż po dedykowaną elektronikę pokładową i napęd odrzutowy.",
+      "Budujemy drony automatyczne łączące autonomię z kontrolą operatora – od rojów dronów 5-calowych i ciężkich oktokopterów X8, przez własne płytki PCB, omnikoptery i napęd odrzutowy, aż po drony wodne i załogowe.",
     "about.board.heading": "Zarząd Koła",
     "about.board.chairman": "Przewodniczący",
     "about.board.member": "Członek zarządu",
@@ -128,9 +170,10 @@ const translations = {
 
   en: {
     // Meta / Title
-    "meta.description.index": "AGH Drone Engineering - AGH UST Scientific Club",
+    "meta.description.index":
+      "AGH Drone Engineering - AGH UST Student Scientific Club. Building autonomous UAVs with operator control.",
     "meta.description.about": "About us - AGH Drone Engineering",
-    "meta.description.projects": "Our Projects - AGH Drone Engineering",
+    "meta.description.projects": "Projects & Platforms - AGH Drone Engineering",
     "title.index": "AGH Drone Engineering",
     "title.about": "About us - AGH Drone Engineering",
     "title.projects": "Projects - AGH Drone Engineering",
@@ -139,98 +182,139 @@ const translations = {
     "nav.home": "Home",
     "nav.projects": "Projects",
     "nav.about": "About us",
+    "nav.wiki": "Knowledge Base (Members)",
     "nav.join": "Contact",
 
     // Hero
+    "hero.badge": "STUDENT SCIENTIFIC CLUB AT AGH UST",
     "hero.title.1": "AGH Drone",
     "hero.title.2": "Engineering",
     "hero.subtitle":
-      "AGH UST student scientific club focused on designing, building, and programming autonomous unmanned aerial vehicles and mobile robots.",
-    "hero.cta": "Our projects",
+      "We build automated drones combining onboard autonomy with operator control. We run R&D projects and compete in aerial robotics competitions worldwide.",
+    "hero.cta": "Explore our projects",
     "hero.vcard": "Add to contacts",
+
+    // Stats bar
+    "stats.grants.label": "In research grants (Ministry, IDUB, ORLEN)",
+    "stats.awards.label": "Competition awards in Poland & worldwide",
+    "stats.payload.label": "Payload capacity of TSO manned drone",
+    "stats.rpm.label": "RPM on our GTM160 turbojet test bench",
 
     // Sectors
     "sectors.heading": "Our Activities",
-    "sectors.autonomy.title": "Autonomy & AI",
+    "sectors.autonomy.title": "Autonomy & Drone Swarms",
     "sectors.autonomy.desc":
-      "Navigation algorithms, computer vision (YOLO, OpenCV), ROS 2, autonomous missions, and drone swarms.",
-    "sectors.hardware.title": "Hardware & Airframes",
+      "Computer vision (YOLO, AprilTag, Optical Flow), onboard computing (Raspberry Pi CM5), custom LoRa swarm communication, and multi-agent cooperation.",
+    "sectors.hardware.title": "Platforms & Custom PCBs",
     "sectors.hardware.desc":
-      "Designing and building multirotors, hybrid aerial-ground vehicles, custom PCBs, and embedded flight systems.",
-    "sectors.contests.title": "International Competitions",
-    "sectors.contests.desc":
-      "Representing AGH UST at national and international UAV competitions including Droniada GZM, IMAV (Strasbourg), IARC (USA), Dual-Tech AGH, and Robocomp.",
+      "From X8 octocopters, 6DoF omnicopters, VTOL wings, and water drones to our custom CM5 Drone Board and GTM160 turbojet test bench.",
+    "sectors.science.title": "Research, Grants & Workshops",
+    "sectors.science.desc":
+      "Wind tunnel testing, scientific publications, international conferences (UAE, SGEM Vienna), and hands-on electronics & UAV workshops.",
 
     // Featured projects on index
-    "home.projects.heading": "Featured Projects",
+    "home.projects.heading": "Our Platforms & Projects",
     "home.projects.subheading":
-      "Explore the aerial platforms, custom electronics, and autonomous systems built by our team.",
-    "home.projects.all": "View all projects",
+      "From heavy X8 octocopters and autonomous 5\" swarms to jet propulsion, omnicopters, and manned multirotors.",
+    "home.projects.all": "View all projects & specifications",
+
+    // Timeline / Awards
+    "timeline.heading": "Competitions & Results (2018–2026)",
+    "timeline.subheading":
+      "Consistently reaching the podium at national and international UAV competitions and scientific conferences.",
+
+    // Member zone banner
+    "members.badge": "CLUB MEMBER ZONE",
+    "members.title": "AGH Drone Engineering Knowledge Base & Tasks",
+    "members.desc":
+      "Already a club member? Access our internal knowledge base for step-by-step drone building guides (ArduPilot, MAVLink, ROS 2, Vision, PCB, Mechanics) and your GitHub tasks panel.",
+    "members.cta": "Open Knowledge Base (aghdrone.pages.dev)",
 
     // Projects page
     "projects.hero.title.1": "Our",
     "projects.hero.title.2": "Projects & Platforms",
     "projects.hero.subtitle":
-      "From autonomous 5-inch drone swarms and heavy X8 coaxial octocopters to hybrid aerial-ground vehicles, custom flight PCBs, and micro-jet propulsion.",
-    "projects.tab.all": "All",
-    "projects.tab.uav": "UAV Platforms",
-    "projects.tab.ai": "Autonomy & Swarms",
-    "projects.tab.hw": "Electronics & Propulsion",
-    "projects.tab.edu": "Workshops",
+      "Overview of aerial, surface, and hybrid platforms, custom flight electronics, and research test benches developed at AGH Drone Engineering.",
+    "projects.click.hint": "Click on any photo to open a full-size preview.",
 
     // Project 1: Octa X8
-    "proj.octa.tag": "UAV Platforms · Rector's Grant 2026",
-    "proj.octa.title": "Coaxial X8 Octocopters: 'Fire & Water' & 'HydroLab'",
+    "proj.octa.tag": "X8 BASE PLATFORM · MODULAR PAYLOADS",
+    "proj.octa.title": "Octocopter X8: 'Fire & Water', 'HydroLab' & Audio Array",
     "proj.octa.desc":
-      "Twin heavy coaxial X8 multirotor platforms (8× T-Motor MN4006 motors, 15\" folding props, 4.9 kg MTOM, up to 35 min flight time, Cube Orange+ with ArduPilot and Raspberry Pi CM5). 'Fire & Water' (Octa1) performs onboard YOLO object detection, acoustic source localization, and rescue payload drop (2nd place at Droniada GZM 2026). 'HydroLab' (Octa2) is a mobile water-quality lab (pH, EC, temperature) with a wireless ESP-NOW sensor probe.",
+      "Heavy coaxial X8 multirotor platform powered by Cube Orange (ArduPilot) and a Raspberry Pi CM5 mission computer. A single flight base supports swappable mission modules: an X/Y directional microphone array for acoustic source localization, an AI vision module (YOLO on CM5), the HydroLab mobile water-quality lab (pH, conductivity, temperature), and long-range ground-station networking.",
 
     // Project 2: IARC Swarm
-    "proj.iarc.tag": "Autonomy & Swarms · MNiSW FERS N215",
-    "proj.iarc.title": "Autonomous 5\" Drone Swarm (IARC Mission 10)",
+    "proj.iarc.tag": "AUTONOMOUS SWARM · IARC USA 2025 & 2026",
+    "proj.iarc.title": "5\" Drone Swarm: Autonomous PFM-1 Mine Detection",
     "proj.iarc.desc":
-      "A swarm of four autonomous 5-inch quadcopters developed for the International Aerial Robotics Competition (IARC) in the USA. Each drone carries a Raspberry Pi CM5 mission computer, a FRAMOS IMX900 global shutter camera, and custom vision algorithms for corridor search, swarm coordination, and PFM-1 mine / AprilTag detection.",
+      "Four autonomous 5-inch quadcopters cooperating to detect PFM-1 mine replicas at the International Aerial Robotics Competition (IARC) in the USA. Each drone runs onboard vision (Raspberry Pi CM5 + global shutter camera, YOLO & AprilTag), communicates via a custom LoRa swarm protocol (positions, detections, task allocation), avoids obstacles, and builds a shared object map controlled via a smartphone module.",
 
-    // Project 3: Dron-Czołg
-    "proj.tank.tag": "Hybrid UAV/UGV · Rector's Grant",
-    "proj.tank.title": "Hybrid Aerial-Ground Drone-Tank (UAV/UGV)",
-    "proj.tank.desc":
-      "Variable-configuration unmanned system designed to support rescue operations in hard-to-reach terrain. A custom servo-driven reduction gear mechanism transforms the platform between quadcopter flight mode and tracked ground vehicle mode with motors coaxially integrated inside the track wheels.",
-
-    // Project 4: CM5IO PCB
-    "proj.pcb.tag": "Flight Electronics · Custom PCB",
-    "proj.pcb.title": "CM5IO Drone Board Mission Computer + ESP32-S3 / LoRa",
+    // Project 3: CM5IO PCB
+    "proj.pcb.tag": "CUSTOM FLIGHT ELECTRONICS · REV. 1.0 (01.2026)",
+    "proj.pcb.title": "CM5 Drone Board – Raspberry Pi CM5 Carrier PCB",
     "proj.pcb.desc":
-      "In-house designed carrier board for the Raspberry Pi Compute Module 5 (CM5) paired with an expansion module featuring an ESP32-S3 MCU, SX1262 LoRa long-range radio, integrated buck converter (up to 40 V input), and a hardware flight-controller killswitch. Combined weight under 57 g.",
+      "Designed entirely in-house, our carrier board for the Raspberry Pi Compute Module 5 features an AP64501 buck converter (5 V, up to 5 A), direct battery input up to 40 V, high-speed PCIe 2.0 x1 and USB 3.0 interfaces, and an expansion module with ESP32-S3, SX1262 LoRa, and hardware killswitch.",
 
-    // Project 5: Salamandra
-    "proj.jet.tag": "Jet Propulsion · Ministry Grant",
-    "proj.jet.title": "Project 'Salamandra' – Micro-Jet Test Bench & Propulsion",
-    "proj.jet.desc":
-      "R&D project focused on building a mobile test bench for micro-turbojet engines with real-time thrust, exhaust gas temperature (EGT), and fuel telemetry, serving as the foundation for high-speed jet-powered UAV platforms.",
-
-    // Project 6: Omnicopter & Tethered UAV
-    "proj.omni.tag": "Research & Inspection · IDUB & Rector's Grants",
-    "proj.omni.title": "6DoF Omnicopter & Tethered UAV System",
+    // Project 4: Omnikopter
+    "proj.omni.tag": "WIND TURBINE INSPECTION · 6DoF & WIND TUNNEL",
+    "proj.omni.title": "Omnicopter: Visual Inspection of Operating Wind Turbine Blades",
     "proj.omni.desc":
-      "Two specialized inspection and surveillance systems: a 6-degree-of-freedom Omnicopter capable of generating thrust in any spatial orientation for wind turbine inspections, and a ground-powered Tethered UAV for multi-hour hover missions and radio relay.",
+      "Multirotor platform controlling position and orientation independently (cascaded controllers with wind modeling). The omnicopter flies at a fixed attitude with its camera locked onto the turbine blade, compensating for wind gusts without tilting to detect leading-edge erosion, micro-cracks, and delamination. Validated in Matlab/Simulink, PX4/Gazebo, CFD, wind tunnels, and published across 4 papers and 5 conferences.",
 
-    // Project 7: Akademia BSP / TurboGRANT
-    "proj.edu.tag": "Education & Workshops · ORLEN TurboGRANT",
-    "proj.edu.title": "UAV Academy & Custom PCB Design Course",
+    // Project 5: Salamandra & GTM160
+    "proj.jet.tag": "JET PROPULSION · MINISTRY GRANT & GTM160 TEST BENCH",
+    "proj.jet.title": "Project 'Salamandra' & GTM160 Turbojet Test Bench",
+    "proj.jet.desc":
+      "Mobile micro-turbojet test bench measuring T2, T3, and EGT temperatures for a modular jet-powered airframe, alongside a dual GTM160 turbojet research station (fully instrumented LAB engine and borosilicate-glass GLASS engine): 160 N max thrust, 117,000 RPM, 750°C EGT, ESDL JETPOL telemetry module, and real-time WiFi/USB analysis.",
+
+    // Project 6: TSO The Small One
+    "proj.tso.tag": "MANNED MULTIROTOR · REMOTE & AUTONOMOUS MISSIONS",
+    "proj.tso.title": "TSO: The Small One – Manned Electric Multirotor",
+    "proj.tso.desc":
+      "Large-scale electric manned drone designed for both remote/autonomous and piloted missions. Features up to 100 kg payload capacity, up to 1 hour endurance, and custom control throttles for heavy cargo delivery into hazardous zones and personnel transport into hard-to-reach areas.",
+
+    // Project 7: Skrzydło VTOL
+    "proj.vtol.tag": "VERTICAL TAKEOFF FIXED-WING · ONBOARD AI",
+    "proj.vtol.title": "VTOL Wing – Composite Reconnaissance Aircraft",
+    "proj.vtol.desc":
+      "Vertical takeoff and landing (VTOL) flying wing designed and laminated entirely in the club. Equipped with an onboard computer running real-time multi-class RGB object detection for border and terrain patrol, reconnaissance missions, and UAV localization and neutralization.",
+
+    // Project 8: AI Racer
+    "proj.racer.tag": "GPS-DENIED NAVIGATION · OPTICAL FLOW & NEURAL NETS",
+    "proj.racer.title": "AI Racer – Autonomous Obstacle & Gate Navigation",
+    "proj.racer.desc":
+      "Autonomous racing drone estimating pose via Optical Flow and deep neural networks (onboard or cloud inference). Enables high-speed indoor flight through gates and obstacles, radio-silent terrain patrol, and reconnaissance in GPS-denied environments.",
+
+    // Project 9: Dron wodny
+    "proj.water.tag": "UNMANNED SURFACE VESSEL · ENVIRONMENTAL MONITORING",
+    "proj.water.title": "Water Drone: Water Quality Monitoring & Bathymetry",
+    "proj.water.desc":
+      "Unmanned catamaran for monitoring water quality in lakes, ponds, and rivers plus depth mapping (0–10 m). Uses thermistors, glass/platinum electrodes, light scattering, and fluorescence to measure temperature (±0.1°C), pH (±0.1), conductivity (1–2000 μS/cm), turbidity (0–1000 NTU), dissolved oxygen (0–20 mg/L), chlorophyll, and cyanobacteria.",
+
+    // Project 10: Dron-Czołg
+    "proj.tank.tag": "HYBRID AERIAL-GROUND PLATFORM · RECTOR'S GRANT",
+    "proj.tank.title": "Hybrid Drone-Tank (UAV ↔ UGV Transformation)",
+    "proj.tank.desc":
+      "Variable-configuration unmanned platform for delivering supplies in rough terrain. A servo-driven reduction gear transforms the vehicle between quadcopter flight mode and tracked ground locomotion.",
+
+    // Project 11: Nauka poza zawodami & Warsztaty
+    "proj.edu.tag": "CONFERENCES · PUBLICATIONS · GRANTS · WORKSHOPS",
+    "proj.edu.title": "Research Beyond Competitions & Engineering Workshops",
     "proj.edu.desc":
-      "Hands-on engineering workshop series supported by the ORLEN Ignacy Łukasiewicz Foundation. We teach practical soldering, STM32/ESP32 microcontroller programming, custom PCB design in KiCad, 3D CAD modeling, and ArduPilot / MAVLink configuration.",
+      "Presenting research at international conferences (UAE, SGEM Vienna, SICE FES), publishing papers (payload drop systems, satellite SLAM), executing major grants (MNiSW 238k PLN, Salamandra 62k PLN, ORLEN Turbogrant 50k PLN, IDUB, Rector's Grants), and running student workshops on soldering, PCB design, 3D printing, and drone building.",
 
     // Contact
-    "contact.title.1": "Want to build and fly",
-    "contact.title.2": "with us?",
+    "contact.title.1": "Join",
+    "contact.title.2": "AGH Drone Engineering",
     "contact.subtitle":
-      "We are looking for enthusiasts of robotics, artificial intelligence, electronics, mechanics, and aviation. Get in touch or follow our social media!",
+      "Electronics, software, mechanics, and test flights. Send us an email or follow our social media!",
     "contact.cta": "Email us: drone@agh.edu.pl",
 
     // Footer
     "footer.expansion": "AGH Drone Engineering",
     "footer.faculty": "Student Scientific Club at AGH UST in Kraków.",
     "footer.contact": "Contact",
+    "footer.wiki": "Knowledge Base for Club Members →",
     "footer.rights": "© 2026 AGH Drone Engineering. All rights reserved.",
 
     // About page
@@ -239,7 +323,7 @@ const translations = {
     "about.p1":
       "AGH Drone Engineering is a student scientific club bringing together enthusiasts of unmanned aerial vehicles, mobile robotics, artificial intelligence, and electronics.",
     "about.p2":
-      "We build custom aerial platforms – from 5-inch autonomous drone swarms, heavy X8 coaxial octocopters, and hybrid aerial-ground vehicles to custom flight electronics and micro-jet propulsion systems.",
+      "We build automated drones combining autonomy with operator control – from 5-inch autonomous swarms and heavy X8 octocopters to custom flight PCBs, omnicopters, turbojet propulsion, water drones, and manned multirotors.",
     "about.board.heading": "Club Board",
     "about.board.chairman": "Chairman",
     "about.board.member": "Board Member",
