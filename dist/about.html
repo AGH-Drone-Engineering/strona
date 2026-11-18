@@ -3,54 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="O nas - AGH Drone Engineering"
-    />
+    <meta name="description" content="O nas - AGH Drone Engineering" />
     <title>O nas - AGH Drone Engineering</title>
 
     <!-- Favicons -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="images/favicons/favicon.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="images/favicons/favicon.png"
-    />
+    <link rel="icon" type="image/png" href="images/favicons/favicon.png" />
+    <link rel="apple-touch-icon" href="images/favicons/favicon.png" />
     <meta name="apple-mobile-web-app-title" content="AGH Drone Engineering" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./output.css" />
 
     <style>
-      .bg-grid-pattern {
-        background-image:
-          linear-gradient(to right, #1e293b 1px, transparent 1px),
-          linear-gradient(to bottom, #1e293b 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
       .i18n-loading {
         opacity: 0;
       }
     </style>
   </head>
   <body
-    class="overflow-x-hidden bg-iot-dark font-oxanium text-slate-300 antialiased"
+    class="overflow-x-hidden bg-white font-sans text-slate-800 antialiased"
     data-page="about"
   >
-    <!-- Background network -->
-    <div class="pointer-events-none fixed inset-0 z-0">
-      <canvas
-        id="iot-network"
-        class="absolute inset-0 h-full w-full opacity-60"
-      ></canvas>
-    </div>
-
     <!-- Header -->
     <header
-      class="fixed top-0 z-50 w-full border-b border-slate-800 bg-iot-dark/90 backdrop-blur-md"
+      class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-md"
     >
       <div class="flex items-center justify-between px-4 py-3 md:px-16">
         <a href="index.html" class="flex items-center gap-3">
@@ -59,30 +43,30 @@
             alt="AGH Drone Engineering Logo"
             class="h-10 w-auto md:h-12"
           />
-          <span class="text-lg font-bold tracking-wider text-white md:text-xl">
-            AGH <span class="text-main">Drone</span> Engineering
+          <span class="text-lg font-bold tracking-tight text-slate-900 md:text-xl">
+            AGH <span class="text-agh-green">Drone</span> Engineering
           </span>
         </a>
 
         <nav class="hidden items-center justify-between gap-8 md:flex">
           <a
             href="index.html"
-            class="transition duration-300 hover:text-main"
+            class="font-medium text-slate-600 transition duration-200 hover:text-agh-green"
             ><span data-i18n="nav.home">Strona główna</span></a
           >
           <a
             href="about.html"
-            class="text-main transition duration-300 hover:text-main"
+            class="font-semibold text-agh-green transition duration-200 hover:text-agh-greenHover"
             ><span data-i18n="nav.about">O nas</span></a
           >
           <a
             href="index.html#contact"
-            class="rounded border border-main px-5 py-2 text-main transition duration-300 hover:bg-main hover:text-iot-dark"
+            class="rounded-lg border-2 border-agh-green px-5 py-2 font-semibold text-agh-green transition duration-200 hover:bg-agh-green hover:text-white"
             ><span data-i18n="nav.join">Kontakt</span></a
           >
           <button
             data-lang-toggle
-            class="rounded-lg bg-slate-800 px-4 py-2 text-sm font-bold tracking-wider text-slate-300 transition duration-300 hover:bg-main/20 hover:text-main"
+            class="rounded-lg bg-slate-100 px-3.5 py-2 text-sm font-bold tracking-wider text-slate-700 transition duration-200 hover:bg-slate-200 hover:text-slate-900"
           >
             EN
           </button>
@@ -90,7 +74,7 @@
 
         <button
           id="mobile-menu-btn"
-          class="block text-slate-300 hover:text-main focus:outline-none md:hidden"
+          class="block text-slate-700 hover:text-agh-green focus:outline-none md:hidden"
           aria-label="Otwórz menu główne"
         >
           <svg
@@ -109,26 +93,26 @@
         </button>
       </div>
 
-      <div id="mobile-menu" class="hidden border-t border-slate-800 md:hidden">
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden">
         <div class="flex flex-col space-y-4 px-6 py-6 text-center">
           <a
             href="index.html"
-            class="mobile-link text-lg font-medium transition duration-300 hover:text-main"
+            class="mobile-link text-lg font-medium text-slate-700 hover:text-agh-green"
             ><span data-i18n="nav.home">Strona główna</span></a
           >
           <a
             href="about.html"
-            class="mobile-link text-lg font-medium text-main transition duration-300 hover:text-main"
+            class="mobile-link text-lg font-semibold text-agh-green"
             ><span data-i18n="nav.about">O nas</span></a
           >
           <a
             href="index.html#contact"
-            class="mobile-link inline-block rounded border border-main px-5 py-2 text-main transition duration-300 hover:bg-main hover:text-iot-dark"
+            class="mobile-link inline-block rounded-lg border-2 border-agh-green px-5 py-2 font-semibold text-agh-green hover:bg-agh-green hover:text-white"
             ><span data-i18n="nav.join">Kontakt</span></a
           >
           <button
             data-lang-toggle
-            class="mx-auto rounded border border-slate-600 px-4 py-2 text-sm font-bold text-slate-300 transition duration-300 hover:border-main hover:text-main"
+            class="mx-auto rounded-lg border border-slate-300 px-4 py-2 text-sm font-bold text-slate-700 hover:border-agh-green hover:text-agh-green"
           >
             EN
           </button>
@@ -140,26 +124,26 @@
       <!-- About us -->
       <section
         id="about"
-        class="relative z-20 mt-14 border-b border-slate-800 bg-slate-900/50 px-8 py-20 backdrop-blur-sm md:mt-20 md:px-32"
+        class="relative z-20 mt-14 border-b border-slate-200 bg-white px-8 py-20 md:mt-20 md:px-32"
       >
         <div class="mb-20 grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div class="space-y-6">
-            <h2 class="text-4xl font-bold text-white md:text-5xl">
+            <h2 class="text-4xl font-extrabold text-slate-900 md:text-5xl">
               <span data-i18n="about.title.1">Pasja do</span>
-              <span class="text-main"
+              <span class="text-agh-green"
                 ><span data-i18n="about.title.2"
                   >latania i technologii</span
                 ></span
               >
             </h2>
-            <p class="text-lg leading-relaxed text-slate-400">
+            <p class="text-lg leading-relaxed text-slate-600">
               <span data-i18n="about.p1"
                 >AGH Drone Engineering to studenckie koło naukowe zrzeszające
                 osoby z pasją do bezzałogowych statków powietrznych, robotyki
                 mobilnej, sztucznej inteligencji i elektroniki.</span
               >
             </p>
-            <p class="leading-relaxed text-slate-400">
+            <p class="leading-relaxed text-slate-600">
               <span data-i18n="about.p2"
                 >Budujemy autorskie platformy latające – od lekkich rojów dronów
                 5-calowych, przez ciężkie oktokoptery koaksjalne X8, aż po
@@ -168,45 +152,41 @@
             </p>
           </div>
 
-          <div class="group relative flex items-center justify-center">
+          <div class="flex items-center justify-center">
             <div
-              class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-main to-neon-purple opacity-20 blur-lg transition duration-500 group-hover:opacity-60"
-            ></div>
-
-            <div
-              class="relative flex w-full items-center justify-center overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/80 p-12 shadow-2xl"
+              class="flex w-full items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-12 shadow-sm"
             >
               <img
                 src="images/logo.png"
                 alt="AGH Drone Engineering"
-                class="h-56 w-auto object-contain transition duration-700"
+                class="h-56 w-auto object-contain"
               />
             </div>
           </div>
         </div>
 
-        <div class="md:border-t md:border-slate-800 md:pt-16">
-          <h3 class="mb-10 text-center text-4xl font-bold text-white">
+        <div class="md:border-t md:border-slate-200 md:pt-16">
+          <h3 class="mb-10 text-center text-3xl font-bold text-slate-900">
             <span data-i18n="about.board.heading">Zarząd i Opiekun Koła</span>
           </h3>
 
           <div class="flex flex-wrap justify-center gap-6">
             <div
-              class="group relative min-w-72 rounded-xl border border-slate-700 bg-slate-900/50 p-6 transition hover:border-main/50"
+              class="min-w-72 rounded-xl border border-slate-200 bg-slate-50 p-6 transition hover:border-agh-green"
             >
-              <h4 class="text-xl font-bold text-white">
+              <h4 class="text-xl font-bold text-slate-900">
                 dr inż. Tymoteusz Turlej
               </h4>
-              <p class="mt-1 font-mono text-sm text-main">
+              <p class="mt-1 text-sm font-semibold text-agh-green">
                 <span data-i18n="about.board.supervisor">Opiekun Naukowy</span>
               </p>
             </div>
 
             <div
-              class="group relative min-w-72 rounded-xl border border-slate-700 bg-slate-900/50 p-6 transition hover:border-main/50"
+              class="min-w-72 rounded-xl border border-slate-200 bg-slate-50 p-6 transition hover:border-agh-green"
             >
-              <h4 class="text-xl font-bold text-white">Wiktor Onik</h4>
-              <p class="mt-1 font-mono text-sm text-main">
+              <h4 class="text-xl font-bold text-slate-900">Wiktor Onik</h4>
+              <p class="mt-1 text-sm font-semibold text-agh-green">
                 <span data-i18n="about.board.member">Zarząd Koła</span>
               </p>
             </div>
@@ -216,7 +196,7 @@
     </main>
 
     <footer
-      class="relative z-10 border-t border-slate-800 bg-iot-dark px-4 pb-10 pt-20"
+      class="relative z-10 border-t border-slate-200 bg-white px-4 pb-10 pt-16"
     >
       <div
         class="mx-auto grid max-w-7xl grid-cols-1 items-center justify-items-center gap-10 md:grid-cols-3 md:gap-6"
@@ -232,7 +212,7 @@
             />
           </a>
 
-          <p class="mt-2 text-sm text-slate-400">
+          <p class="mt-2 text-sm font-semibold text-slate-800">
             <span data-i18n="footer.expansion">AGH Drone Engineering</span>
           </p>
           <p class="mt-1 text-sm text-slate-500">
@@ -242,12 +222,12 @@
           </p>
         </div>
         <div class="mx-auto text-center md:mx-0">
-          <h3 class="mb-1 text-2xl font-bold">
+          <h3 class="mb-1 text-xl font-bold text-slate-900">
             <span data-i18n="footer.contact">Kontakt</span>
           </h3>
           <a
             href="mailto:drone@agh.edu.pl"
-            class="text-xl transition duration-300 hover:text-neon-cyan"
+            class="text-lg font-medium text-agh-green transition duration-200 hover:underline"
             >drone@agh.edu.pl</a
           >
         </div>
@@ -255,10 +235,10 @@
           <a
             href="https://github.com/AGH-Drone-Engineering"
             target="_blank"
-            class="text-slate-400 transition duration-300 hover:-translate-y-1 hover:text-white"
+            class="text-slate-500 transition duration-200 hover:text-slate-900"
             aria-label="GitHub"
             ><svg
-              class="h-8 w-8"
+              class="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -274,11 +254,11 @@
           <a
             href="https://www.linkedin.com/company/agh-drone"
             target="_blank"
-            class="text-slate-400 transition duration-300 hover:-translate-y-1 hover:text-neon-cyan"
+            class="text-slate-500 transition duration-200 hover:text-agh-green"
             aria-label="LinkedIn"
           >
             <svg
-              class="h-8 w-8"
+              class="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -294,11 +274,11 @@
           <a
             href="https://www.facebook.com/AGHDroneEngineering/"
             target="_blank"
-            class="text-slate-400 transition duration-300 hover:-translate-y-1 hover:text-blue-500"
+            class="text-slate-500 transition duration-200 hover:text-blue-600"
             aria-label="Facebook"
           >
             <svg
-              class="h-8 w-8"
+              class="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -314,11 +294,11 @@
           <a
             href="https://www.instagram.com/agh_drones"
             target="_blank"
-            class="text-slate-400 transition duration-300 hover:-translate-y-1 hover:text-neon-purple"
+            class="text-slate-500 transition duration-200 hover:text-agh-red"
             aria-label="Instagram"
           >
             <svg
-              class="h-8 w-8"
+              class="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -333,7 +313,7 @@
         </div>
       </div>
       <div
-        class="mx-auto mt-10 max-w-7xl border-t border-slate-800 pt-6 text-center text-xs text-slate-600"
+        class="mx-auto mt-10 max-w-7xl border-t border-slate-200 pt-6 text-center text-xs text-slate-500"
       >
         <span data-i18n="footer.rights"
           >© 2026 AGH Drone Engineering. Wszelkie prawa zastrzeżone.</span
@@ -352,6 +332,5 @@
     </script>
     <script src="i18n.js" defer></script>
     <script src="mobile.js" defer></script>
-    <script src="background.js" defer></script>
   </body>
 </html>
